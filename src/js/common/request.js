@@ -332,6 +332,9 @@ const Request = {
     },
     SubscribeCreate(param) {
       return Ajax.postJson('/course/' + param.course_id + '/subscribe/create', param);
+    },
+    VideoWatchRecords(courseId, userId) {
+      return Ajax.get('/course/' + courseId + '/user/' + userId + '/watch/records');
     }
   },
   CourseAttach: {

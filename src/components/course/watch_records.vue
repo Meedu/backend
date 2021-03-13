@@ -20,10 +20,11 @@
                 <DateRangePicker v-model="dateRange" format="YYYY-MM-DD"></DateRangePicker>
               </FormItem>
             </Cell>
-            <Cell :width="6">
+            <Cell :width="8">
               <FormItem>
                 <Button class="h-btn h-btn-primary" @click="getData(true)">搜索</Button>
                 <Button class="h-btn" @click="reset()">重置</Button>
+                <Button class="h-btn h-btn-primary" @click="exportExcel()">导出表格</Button>
               </FormItem>
             </Cell>
           </Row>
@@ -67,9 +68,9 @@
               <span v-else class="red">否</span>
             </template>
           </TableItem>
-          <TableItem title="订阅" :width="100">
+          <TableItem title="操作" :width="100">
             <template slot-scope="{ data }">
-              <Button class="h-btn h-btn-s h-btn-primary" @click="showDesc(data)">详情</Button>
+              <p-button glass="h-btn h-btn-s h-btn-primary" permission="course.user.watch.records" text="详情" @click="showDesc(data)"></p-button>
             </template>
           </TableItem>
         </Table>
@@ -131,11 +132,13 @@ export default {
       data.id = this.id;
       Object.assign(data, this.filter);
       R.Course.WatchRecords(data).then(res => {
-        this.list = res.data.data.data;
-        this.users = res.data.users;
-        this.pagination.total = res.data.data.total;
-        this.subscribeRecords = res.data.subscribe_records;
         this.loading = false;
+
+        this.list = res.data.data.data;
+        this.pagination.total = res.data.data.total;
+
+        this.users = res.data.users;
+        this.subscribeRecords = res.data.subscribe_records;
       });
     },
     changePage() {
@@ -147,38 +150,52 @@ export default {
         closeOnMask: false,
         component: {
           vue: resolve => {
-            require(['../video/watch_records'], resolve);
+            require(['./video_watch_records'], resolve);
           },
           datas: {
-            id: 0,
             course_id: item.course_id,
             user_id: item.user_id
           }
         },
         events: {
-          success: (modal, data) => {
+          success: modal => {
             modal.close();
-            this.getData(true);
           }
         }
       });
     },
     exportExcel() {
-      let data = {
-        video_id: 0,
-        export: 1,
-        course_id: this.id
-      };
-      R.Video.WatchRecords(data).then(res => {
-        if (res.data.data.length === 1) {
+      this.loading = true;
+      R.Course.WatchRecords({
+        id: this.id,
+        page: 1,
+        size: this.pagination.total
+      }).then(res => {
+        this.loading = false;
+        if (res.data.data.total === 0) {
           HeyUI.$Message.warn('数据为空');
           return;
         }
 
-        let filename = '课程观看记录|' + Utils.currentDate() + '.xlsx';
-        let sheetName = '默认';
+        let users = res.data.users;
+        let subscribeRecords = res.data.subscribe_records;
 
-        Utils.exportExcel(res.data.data, filename, sheetName);
+        let filename = '课程观看记录|' + Utils.currentDate() + '.xlsx';
+        let sheetName = 'sheet1';
+
+        let data = [['用户ID', '用户', '手机号', '观看进度', '开始时间', '看完时间', '是否订阅']];
+        res.data.data.data.forEach(item => {
+          let user = users[item.user_id];
+          if (typeof user === 'undefined') {
+            return;
+          }
+
+          let isSub = typeof subscribeRecords[item.user_id] === 'undefined' ? '否' : '是';
+
+          data.push([item.user_id, user.nick_name, user.mobile, item.progress + '%', item.created_at, item.watched_at, isSub]);
+        });
+
+        Utils.exportExcel(data, filename, sheetName);
       });
     }
   }
