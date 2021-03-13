@@ -294,6 +294,9 @@ const Request = {
     },
     RemarkUpdate(param) {
       return Ajax.putJson('/member/' + param.id + '/remark', param);
+    },
+    SendMessage(id, message) {
+      return Ajax.postJson('/member/' + id + '/message', { message: message });
     }
   },
   Course: {

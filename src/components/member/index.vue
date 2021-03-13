@@ -77,13 +77,19 @@
               </template>
             </template>
           </TableItem>
-          <TableItem title="操作" align="center" :width="240" fixed="right">
+          <TableItem title="操作" align="center" :width="300" fixed="right">
             <template slot-scope="{ data }">
               <ButtonGroup>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.detail" text="详情" @click="detail(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.edit" text="编辑" @click="edit(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.tags" text="标签" @click="showTags(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.remark" text="备注" @click="showRemark(data)"></p-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="member.message.send"
+                  text="发消息"
+                  @click="showSendMessage(data)"
+                ></p-button>
               </ButtonGroup>
             </template>
           </TableItem>
@@ -252,6 +258,25 @@ export default {
           success: (modal, data) => {
             modal.close();
             this.getData();
+          }
+        }
+      });
+    },
+    showSendMessage(item) {
+      this.$Modal({
+        closeOnMask: false,
+        hasCloseIcon: true,
+        component: {
+          vue: resolve => {
+            require(['./send_message'], resolve);
+          },
+          datas: {
+            id: item.id
+          }
+        },
+        events: {
+          success: modal => {
+            modal.close();
           }
         }
       });
