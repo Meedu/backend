@@ -10,7 +10,7 @@
       <div class="float-box mb-10">
         <Table :loading="loading" :datas="datas">
           <TableItem prop="id" title="TID" :width="120"></TableItem>
-          <TableItem prop="name" title="姓名" :width="150"></TableItem>
+          <TableItem prop="name" title="姓名" :width="200"></TableItem>
           <TableItem prop="courses_count" title="课程" unit="个" :width="100"></TableItem>
           <TableItem title="账号">
             <template slot-scope="{ data }">
@@ -21,8 +21,10 @@
           </TableItem>
           <TableItem title="操作" align="center" :width="200">
             <template slot-scope="{ data }">
-              <p-del-button permission="addons.Zhibo.teacher.delete" @click="remove(datas, data)"></p-del-button>
-              <p-button glass="h-btn h-btn-s h-btn-primary" permission="addons.Zhibo.teacher.update" text="编辑" @click="edit(data)"></p-button>
+              <ButtonGroup>
+                <p-del-button permission="addons.Zhibo.teacher.delete" @click="remove(datas, data)"></p-del-button>
+                <p-button glass="h-btn h-btn-s h-btn-primary" permission="addons.Zhibo.teacher.update" text="编辑" @click="edit(data)"></p-button>
+              </ButtonGroup>
             </template>
           </TableItem>
         </Table>

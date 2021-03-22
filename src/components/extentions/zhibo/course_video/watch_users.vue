@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">观看用户</span>
       <div class="h-panel-right">
@@ -12,14 +12,14 @@
       </div>
       <div class="float-box mb-10">
         <Table :loading="loading" :datas="datas">
-          <TableItem title="用户ID" prop="user_id" :width="100"></TableItem>
+          <TableItem title="用户ID" prop="user_id" :width="130"></TableItem>
           <TableItem title="用户">
             <template slot-scope="{ data }">
               <span v-if="data.user">{{ data.user.nick_name }}</span>
               <span class="c-red" v-else>已删除</span>
             </template>
           </TableItem>
-          <TableItem title="观看时长" :width="120">
+          <TableItem title="观看时长" :width="150">
             <template slot-scope="{ data }">
               <duration-text :seconds="data.duration" />
             </template>

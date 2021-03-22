@@ -1,6 +1,5 @@
-<style lang="less"></style>
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">编辑</span>
       <div class="h-panel-right">
@@ -34,6 +33,11 @@
               <image-upload v-model="course.thumb" name="课程封面"></image-upload>
             </FormItem>
           </Cell>
+          <Cell :width="24">
+            <FormItem label="播放封面" prop="poster">
+              <image-upload v-model="course.poster" name="播放封面"></image-upload>
+            </FormItem>
+          </Cell>
         </Row>
 
         <Row :space="10">
@@ -48,11 +52,16 @@
             </FormItem>
           </Cell>
           <Cell :width="6">
+            <FormItem label="状态" prop="status">
+              <Select v-model="course.status" :datas="status" keyName="key" titleName="name"></Select>
+            </FormItem>
+          </Cell>
+          <Cell :width="3">
             <FormItem label="会员免费" prop="vip_can_view">
               <h-switch v-model="course.vip_can_view" :trueValue="1" :falseValue="0"></h-switch>
             </FormItem>
           </Cell>
-          <Cell :width="6">
+          <Cell :width="3">
             <FormItem label="显示" prop="is_show">
               <h-switch v-model="course.is_show" :trueValue="1" :falseValue="0"></h-switch>
             </FormItem>
@@ -89,7 +98,9 @@ export default {
         original_desc: '',
         published_at: '',
         is_show: 1,
-        vip_can_view: 0
+        vip_can_view: 0,
+        status: null,
+        poster: ''
       },
       rules: {
         required: [
@@ -105,6 +116,20 @@ export default {
           'vip_can_view'
         ]
       },
+      status: [
+        {
+          name: '未开课',
+          key: 0
+        },
+        {
+          name: '已开课',
+          key: 1
+        },
+        {
+          name: '已结课',
+          key: 2
+        }
+      ],
       teachers: [],
       categories: []
     };

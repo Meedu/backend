@@ -34,6 +34,11 @@
               <image-upload v-model="course.thumb" name="课程封面"></image-upload>
             </FormItem>
           </Cell>
+          <Cell :width="24">
+            <FormItem label="播放封面" prop="poster">
+              <image-upload v-model="course.poster" name="播放封面"></image-upload>
+            </FormItem>
+          </Cell>
         </Row>
 
         <Row :space="10">
@@ -88,7 +93,8 @@ export default {
         original_desc: '',
         published_at: '',
         is_show: 1,
-        vip_can_view: 0
+        vip_can_view: 0,
+        poster: ''
       },
       rules: {
         required: ['category_id', 'teacher_id', 'title', 'thumb', 'charge', 'short_description', 'original_desc', 'published_at', 'is_show']

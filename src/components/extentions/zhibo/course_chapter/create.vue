@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-800">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">添加</span>
       <div class="h-panel-right">
@@ -32,7 +32,7 @@ export default {
     return {
       chapter: {
         name: '',
-        sort: 0,
+        sort: null,
         course_id: this.course_id
       },
       rules: {

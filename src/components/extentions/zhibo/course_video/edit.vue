@@ -1,6 +1,5 @@
-<style lang="less"></style>
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">编辑</span>
       <div class="h-panel-right">
@@ -28,17 +27,16 @@
               <DatePicker v-model="video.published_at" v-width="200" type="datetime"></DatePicker>
             </FormItem>
           </Cell>
-          <Cell :width="2"></Cell>
           <Cell :width="4">
             <FormItem label="是否显示" prop="is_show">
               <h-switch v-model="video.is_show" :trueValue="1" :falseValue="0"></h-switch>
             </FormItem>
           </Cell>
           <Cell :width="24">
-            <FormItem label="腾讯云回放视频id" prop="tencent_video_id" v-if="video.service === 'tencent'">
+            <FormItem label="腾讯云回放视频ID" prop="tencent_video_id" v-if="video.service === 'tencent'">
               <input type="text" v-model="video.tencent_video_id" />
             </FormItem>
-            <FormItem label="阿里云回放视频id" prop="aliyun_video_id" v-else-if="video.service === 'aliyun'">
+            <FormItem label="阿里云回放视频ID" prop="aliyun_video_id" v-else-if="video.service === 'aliyun'">
               <input type="text" v-model="video.aliyun_video_id" />
             </FormItem>
           </Cell>
