@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">添加</span>
       <div class="h-panel-right">
@@ -26,6 +26,11 @@
               <input type="text" v-model="teacher.password" />
             </FormItem>
           </Cell>
+          <Cell :width="24">
+            <FormItem label="隐藏" prop="is_hidden">
+              <h-switch v-model="teacher.is_hidden" :trueValue="1" :falseValue="0"></h-switch>
+            </FormItem>
+          </Cell>
         </Row>
 
         <FormItem label="头像" prop="avatar">
@@ -47,10 +52,11 @@ export default {
         avatar: '',
         short_desc: '',
         username: '',
-        password: ''
+        password: '',
+        is_hidden: 0
       },
       rules: {
-        required: ['name', 'avatar', 'short_desc', 'username', 'password']
+        required: ['name', 'avatar', 'short_desc', 'username', 'password', 'is_hidden']
       }
     };
   },

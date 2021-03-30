@@ -30,27 +30,27 @@
         </Form>
       </div>
       <div class="float-box mt-10">
-        <p-del-button permission="addons.CodeExchanger.codes.delete.multi" @click="deleteSubmit()"></p-del-button>
-
-        <p-button
-          glass="h-btn h-btn-primary h-btn-s"
-          permission="addons.CodeExchanger.codes.generate"
-          text="批量生成10个"
-          @click="showGeneratePage(10)"
-        ></p-button>
-        <p-button
-          glass="h-btn h-btn-primary h-btn-s"
-          permission="addons.CodeExchanger.codes.generate"
-          text="批量生成50个"
-          @click="showGeneratePage(50)"
-        ></p-button>
-
-        <p-button
-          glass="h-btn h-btn-primary h-btn-s"
-          permission="addons.CodeExchanger.codes.export"
-          text="导出未使用兑换码"
-          @click="exportData()"
-        ></p-button>
+        <ButtonGroup>
+          <p-del-button permission="addons.CodeExchanger.codes.delete.multi" @click="deleteSubmit()"></p-del-button>
+          <p-button
+            glass="h-btn h-btn-primary h-btn-s"
+            permission="addons.CodeExchanger.codes.generate"
+            text="生成10个"
+            @click="showGeneratePage(10)"
+          ></p-button>
+          <p-button
+            glass="h-btn h-btn-primary h-btn-s"
+            permission="addons.CodeExchanger.codes.generate"
+            text="生成50个"
+            @click="showGeneratePage(50)"
+          ></p-button>
+          <p-button
+            glass="h-btn h-btn-primary h-btn-s"
+            permission="addons.CodeExchanger.codes.export"
+            text="导出未使用兑换码"
+            @click="exportData()"
+          ></p-button>
+        </ButtonGroup>
       </div>
       <div class="float-box mt-10">
         <Table :loading="loading" :datas="datas" :checkbox="true" ref="table">
@@ -135,13 +135,13 @@ export default {
       for (let i = 0; i < items.length; i++) {
         ids.push(items[i].id);
       }
-      R.Extentions.CodeExchanger.Codes.DeleteMulti({ ids: ids }).then(resp => {
+      R.Extentions.CodeExchanger.Codes.DeleteMulti({ ids: ids }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData();
       });
     },
     showGeneratePage(count = 10) {
-      R.Extentions.CodeExchanger.Codes.Generate({ gid: this.gid, count: count }).then(res => {
+      R.Extentions.CodeExchanger.Codes.Generate({ gid: this.gid, count: count }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData(true);
       });

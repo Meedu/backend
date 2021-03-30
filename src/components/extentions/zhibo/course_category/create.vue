@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-800">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">添加</span>
       <div class="h-panel-right">
@@ -37,7 +37,7 @@ export default {
     return {
       category: {
         name: '',
-        sort: 0,
+        sort: null,
         is_show: 1
       },
       rules: {

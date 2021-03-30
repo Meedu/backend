@@ -27,13 +27,7 @@
         </Form>
       </div>
       <div class="float-box mb-10">
-        <p-button
-          glass="h-btn h-btn-primary"
-          icon="h-icon-plus"
-          permission="addons.CodeExchanger.goods.store"
-          text="添加"
-          @click="create()"
-        ></p-button>
+        <p-button glass="h-btn h-btn-primary" permission="addons.CodeExchanger.goods.store" text="添加" @click="create()"></p-button>
       </div>
       <div class="float-box mb-10">
         <Table :loading="loading" :datas="datas">
@@ -44,14 +38,21 @@
           <TableItem prop="goods_charge" title="价格" unit="元" :width="80"></TableItem>
           <TableItem title="操作" align="center" :width="200">
             <template slot-scope="{ data }">
-              <p-del-button permission="addons.CodeExchanger.goods.delete" @click="remove(datas, data)"></p-del-button>
-              <p-button glass="h-btn h-btn-s h-btn-primary" permission="addons.CodeExchanger.goods.update" text="编辑" @click="edit(data)"></p-button>
-              <p-button
-                glass="h-btn h-btn-s h-btn-primary"
-                permission="addons.CodeExchanger.codes.list"
-                text="兑换码"
-                @click="showCodes(data)"
-              ></p-button>
+              <ButtonGroup>
+                <p-del-button permission="addons.CodeExchanger.goods.delete" @click="remove(datas, data)"></p-del-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="addons.CodeExchanger.goods.update"
+                  text="编辑"
+                  @click="edit(data)"
+                ></p-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="addons.CodeExchanger.codes.list"
+                  text="兑换码"
+                  @click="showCodes(data)"
+                ></p-button>
+              </ButtonGroup>
             </template>
           </TableItem>
         </Table>

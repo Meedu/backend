@@ -1,6 +1,5 @@
-<style lang="less"></style>
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">添加</span>
       <div class="h-panel-right">
@@ -28,7 +27,6 @@
               <DatePicker v-model="video.published_at" v-width="200" type="datetime"></DatePicker>
             </FormItem>
           </Cell>
-          <Cell :width="2"></Cell>
           <Cell :width="4">
             <FormItem label="是否显示" prop="is_show">
               <h-switch v-model="video.is_show" :trueValue="1" :falseValue="0"></h-switch>

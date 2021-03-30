@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     changePage() {
-      this.getData();
+      this.getData(false);
     },
     resetFilter() {
       this.filer = {
@@ -107,7 +107,7 @@ export default {
       };
       this.getData(true);
     },
-    getData(reset = true) {
+    getData(reset = false) {
       if (reset) {
         this.pagination.page = 1;
       }
