@@ -59,6 +59,11 @@
                 text="阅卷"
                 @click="showScore(data)"
               ></p-button>
+              <p-a
+                permission="addons.Paper.paper.userPaper.render"
+                :url="'/backend/addons/Paper/paper/' + data.paper_id + '/userPaper/' + data.id + '/render'"
+                text="查看"
+              ></p-a>
             </template>
           </TableItem>
         </Table>
@@ -138,7 +143,8 @@ export default {
           }
         }
       });
-    }
+    },
+    showRender(item) {}
   }
 };
 </script>

@@ -31,7 +31,9 @@ export default {
     };
   },
   mounted() {
-    this.$refs.xlsfile.addEventListener('change', this.handleFile, false);
+    this.$nextTick(() => {
+      this.$refs.xlsfile.addEventListener('change', this.handleFile, false);
+    });
   },
   methods: {
     handleFile(e) {
