@@ -38,7 +38,7 @@
 
     <!-- 下面的图片引用是为了统计meedu的使用数量，无其他意义，可删除 -->
     <div style="display: none">
-      <img src="https://meedu.vip/api/v1/stat?v=v3.4" />
+      <img src="https://meedu.vip/api/v1/stat?v=v4.0" />
     </div>
   </div>
 </template>
