@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-800">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">编辑</span>
       <div class="h-panel-right">
@@ -12,7 +12,7 @@
         <Row :space="10">
           <Cell :width="24">
             <FormItem label="头像" prop="avatar">
-              <image-upload v-model="user.avatar" name="选择头像"></image-upload>
+              <image-upload v-model="user.avatar" name="选择头像" help="建议尺寸：100x100"></image-upload>
             </FormItem>
           </Cell>
 

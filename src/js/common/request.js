@@ -297,7 +297,10 @@ const Request = {
     },
     SendMessage(id, message) {
       return Ajax.postJson('/member/' + id + '/message', { message: message });
-    }
+    },
+    VideoWatchRecords(param) {
+      return Ajax.get('/member/' + param.id + '/detail/videoWatchRecords', param);
+    },
   },
   Course: {
     List(param) {
