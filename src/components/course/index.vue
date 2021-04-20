@@ -38,11 +38,11 @@
       <div class="float-box mb-10">
         <Table :loading="loading" :datas="datas" @sort="sortEvt">
           <TableItem prop="id" title="课程ID" :sort="true" :width="120"></TableItem>
-          <TableItem prop="title" title="课程"></TableItem>
+          <TableItem prop="title" title="课程" :width="500"></TableItem>
           <TableItem prop="charge" title="价格" unit="元" :sort="true" :width="120"></TableItem>
           <TableItem title="订阅人数" :sort="true" :width="120">
             <template slot-scope="{ data }">
-              <span @click="showSubscribesPage(data)">{{ data.user_count }}</span>
+              <span class="pointer blue" @click="showSubscribesPage(data)">{{ data.user_count }}人</span>
             </template>
           </TableItem>
           <TableItem title="操作" align="center" :width="400">
@@ -59,7 +59,7 @@
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
                   permission="course.watchRecords"
-                  text="用户观看"
+                  text="观看记录"
                   @click="showWatchRecords(data)"
                 ></p-button>
               </ButtonGroup>
