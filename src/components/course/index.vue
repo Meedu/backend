@@ -40,17 +40,21 @@
           <TableItem prop="id" title="课程ID" :sort="true" :width="120"></TableItem>
           <TableItem prop="title" title="课程"></TableItem>
           <TableItem prop="charge" title="价格" unit="元" :sort="true" :width="120"></TableItem>
-          <TableItem title="订阅" :sort="true" :width="120">
+          <TableItem title="订阅人数" :sort="true" :width="120">
             <template slot-scope="{ data }">
               <span @click="showSubscribesPage(data)">{{ data.user_count }}</span>
             </template>
           </TableItem>
-          <TableItem title="操作" align="center" :width="350">
+          <TableItem title="操作" align="center" :width="400">
             <template slot-scope="{ data }">
               <ButtonGroup>
                 <p-del-button permission="course.destroy" @click="remove(datas, data)"></p-del-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="course.edit" text="编辑" @click="edit(data)"></p-button>
+              </ButtonGroup>
+
+              <ButtonGroup>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="course_chapter" text="章节" @click="goChapter(data)"></p-button>
+                <p-button glass="h-btn h-btn-s h-btn-primary" permission="video" text="视频" @click="goVideo(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="course_attach" text="附件" @click="goCourseAttach(data)"></p-button>
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
@@ -171,6 +175,20 @@ export default {
         component: {
           vue: resolve => {
             require(['./chapter/index'], resolve);
+          },
+          datas: {
+            cid: item.id
+          }
+        }
+      });
+    },
+    goVideo(item) {
+      this.$Modal({
+        closeOnMask: false,
+        hasCloseIcon: true,
+        component: {
+          vue: resolve => {
+            require(['../video/index'], resolve);
           },
           datas: {
             cid: item.id

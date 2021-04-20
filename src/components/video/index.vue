@@ -1,42 +1,13 @@
-<style lang="less" scoped>
-.course-title {
-  color: #aaaaaa;
-}
-</style>
 <template>
-  <div class="table-basic-vue frame-page h-panel">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
-      <span class="h-panel-title">全部视频</span>
+      <span class="h-panel-title">添加</span>
+      <div class="h-panel-right">
+        <Button color="primary" @click="create">添加</Button>
+        <Button @click="$emit('close')" :text="true">取消</Button>
+      </div>
     </div>
     <div class="h-panel-body">
-      <div class="float-box mb-10">
-        <Form>
-          <Row :space="10">
-            <Cell :width="4">
-              <FormItem label="视频ID">
-                <input type="text" v-model="cond.id" placeholder="视频ID" />
-              </FormItem>
-            </Cell>
-            <Cell :width="4">
-              <FormItem label="搜索">
-                <input type="text" v-model="cond.keywords" placeholder="视频标题模糊搜索" />
-              </FormItem>
-            </Cell>
-            <Cell :width="10">
-              <FormItem label="课程">
-                <template v-slot:label>课程</template>
-                <Select v-model="cond.course_id" :filterable="true" :datas="courses" keyName="id" titleName="title"></Select>
-              </FormItem>
-            </Cell>
-            <Cell :width="6">
-              <FormItem>
-                <Button color="primary" @click="getData(true)">搜索</Button>
-                <Button class="h-btn" @click="reset">重置</Button>
-              </FormItem>
-            </Cell>
-          </Row>
-        </Form>
-      </div>
       <div class="flaot-box mb-10">
         <ButtonGroup>
           <p-del-button permission="video.destroy.multi" text="批量删除" @click="deleteSubmit()"></p-del-button>
@@ -53,12 +24,10 @@
         </ButtonGroup>
       </div>
       <div class="float-box mb-10">
-        <Table :loading="loading" :checkbox="true" :datas="datas" ref="table" @sort="sortEvt">
-          <TableItem prop="id" title="视频ID" :sort="true" :width="120"></TableItem>
+        <Table :loading="loading" :checkbox="true" :datas="datas" ref="table">
+          <TableItem prop="id" title="视频ID" :width="120"></TableItem>
           <TableItem title="视频">
             <template slot-scope="{ data }">
-              <span class="course-title">{{ data.course.title }}</span>
-              /
               <span class="video-title">{{ data.title }}</span>
             </template>
           </TableItem>
@@ -68,6 +37,11 @@
           <TableItem title="时长" :width="120">
             <template slot-scope="{ data }">
               <duration-text :seconds="data.duration" />
+            </template>
+          </TableItem>
+          <TableItem title="上架时间" :width="200">
+            <template slot-scope="{ data }">
+              {{ data.published_at }}
             </template>
           </TableItem>
           <TableItem title="操作" align="center" :width="300">
@@ -101,6 +75,7 @@
 import DurationText from '@/components/common/duration-text';
 
 export default {
+  props: ['cid'],
   components: {
     DurationText
   },
@@ -110,13 +85,6 @@ export default {
         page: 1,
         size: 10,
         total: 0
-      },
-      cond: {
-        keywords: '',
-        sort: 'id',
-        order: 'desc',
-        course_id: null,
-        id: null
       },
       datas: [],
       loading: false,
@@ -130,29 +98,25 @@ export default {
     changePage() {
       this.getData();
     },
-    reset() {
-      this.cond.keywords = '';
-      this.cond.course_id = null;
-      this.cond.id = null;
-      this.getData(true);
-    },
-    sortEvt(sort) {
-      this.cond.sort = sort.prop;
-      this.cond.order = sort.type;
-      this.getData();
-    },
     getData(reload = false) {
+      if (this.loading) {
+        return;
+      }
+
       if (reload) {
         this.pagination.page = 1;
       }
+
       this.loading = true;
-      let data = this.pagination;
-      Object.assign(data, this.cond);
+      let data = { cid: this.cid };
+      Object.assign(data, this.pagination);
+
       R.Video.List(data).then(resp => {
         this.datas = resp.data.videos.data;
         this.pagination.total = resp.data.videos.total;
-        this.loading = false;
         this.courses = resp.data.courses;
+
+        this.loading = false;
       });
     },
     create() {
