@@ -1,9 +1,5 @@
 {
-  "name": "meedu-backend",
-  "version": "1.0.0",
-  "description": "meedu backend.",
-  "main": "index.js",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "axios": "^0.19.0",
@@ -32,7 +28,7 @@
     "vue-tinymce-editor": "^1.6.2",
     "vuedraggable": "^2.23.2",
     "vuex": "^2.3.1",
-    "wangeditor": "^4.x",
+    "wangeditor": "4.6.15",
     "xlsx": "^0.16.9"
   },
   "devDependencies": {
@@ -45,7 +41,6 @@
     "eslint-plugin-vue": "^5.2.2",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
-    "mockjs": "^1.0.1-beta3",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1"
   },
