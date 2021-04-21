@@ -19,8 +19,10 @@
         </TableItem>
         <TableItem title="操作" align="center" :width="200">
           <template slot-scope="{ data }">
-            <p-del-button permission="courseCategory.destroy" @click="remove(datas, data)"></p-del-button>
-            <p-button glass="h-btn h-btn-s h-btn-primary" permission="courseCategory.edit" text="编辑" @click="edit(data)"></p-button>
+            <ButtonGroup>
+              <p-del-button permission="courseCategory.destroy" @click="remove(datas, data)"></p-del-button>
+              <p-button glass="h-btn h-btn-s h-btn-primary" permission="courseCategory.edit" text="编辑" @click="edit(data)"></p-button>
+            </ButtonGroup>
           </template>
         </TableItem>
       </Table>

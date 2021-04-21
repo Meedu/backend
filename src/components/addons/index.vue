@@ -4,7 +4,7 @@
       <span class="h-panel-title">插件</span>
     </div>
     <div class="h-panel-body">
-      <div style="margin-bottom: 10px;">
+      <div style="margin-bottom: 10px">
         <Tabs :datas="tabs" v-model="tab"></Tabs>
       </div>
 
@@ -19,37 +19,26 @@
           </TableItem>
           <TableItem title="操作" align="center" :width="80">
             <template slot-scope="{ data }">
-              <a
-                v-if="data.enabled && typeof data.index_url !== 'undefined' && data.index_url"
-                :href="data.index_url + '?token=' + token"
-              >配置</a>
+              <a v-if="data.enabled && typeof data.index_url !== 'undefined' && data.index_url" :href="data.index_url + '?token=' + token">配置</a>
             </template>
           </TableItem>
         </Table>
       </div>
 
       <div v-if="tab === 'repository'">
-        <div style="margin-bottom: 10px;">
+        <div style="margin-bottom: 10px">
           <p>
             <button @click="refresh()">刷新</button>
-            meedu.vip账号：{{user.name || '登录出错'}} | 账户余额：{{user.balance / 100}}元
-            <a
-              href="https://meedu.vip"
-              target="_blank"
-              style="color: orange;font-weight: 800"
-            >充值</a>
-            <a
-              href="https://www.yuque.com/meedu/yr7rek/adc5ca"
-              target="_blank"
-              style="color: red"
-            >无法使用？查看配置教程</a>
+            meedu.vip账号：{{ user.name || '登录出错' }} | 账户余额：{{ user.balance / 100 }}元
+            <a href="https://meedu.vip" target="_blank" style="color: orange; font-weight: 800">充值</a>
+            <a href="https://www.yuque.com/meedu/yr7rek/adc5ca" target="_blank" style="color: red">无法使用？查看配置教程</a>
           </p>
         </div>
         <Table :loading="loading" :datas="repository">
           <TableItem title="插件">
             <template slot-scope="{ data }">
               <a :href="'https://meedu.vip/addons/' + data.id + '/' + data.sign" target="_blank">
-                {{data.name}}
+                {{ data.name }}
                 <span class="h-tag h-tag-red" v-if="data.is_buy">已购买</span>
               </a>
             </template>
@@ -57,7 +46,7 @@
           <TableItem prop="version" title="版本"></TableItem>
           <TableItem title="价格">
             <template slot-scope="{ data }">
-              <span>￥{{data.charge / 100}}</span>
+              <span>￥{{ data.charge / 100 }}</span>
             </template>
           </TableItem>
           <TableItem title="操作" align="center">
@@ -68,7 +57,7 @@
                 </Poptip>
                 <span v-else>已安装</span>
                 <Poptip v-if="data.is_upgrade" content="确认升级？" @confirm="upgrade(data)">
-                  <button>可升级(当前：{{data.local_version}})</button>
+                  <button>可升级(当前：{{ data.local_version }})</button>
                 </Poptip>
               </div>
             </template>
@@ -97,7 +86,7 @@ export default {
       tab: 'repository',
       repositoryPaginate: {
         page: 1,
-        size: 20,
+        size: 100,
         total: 0
       },
       user: {
