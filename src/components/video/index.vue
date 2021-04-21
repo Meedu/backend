@@ -14,11 +14,11 @@
           <p-button glass="h-btn h-btn-primary h-btn-s" permission="video.store" text="添加" @click="create()"></p-button>
           <p-button glass="h-btn h-btn-primary h-btn-s" permission="video.import" text="视频批量导入" @click="showVideosImport()"></p-button>
 
-          <p-button glass="h-btn h-btn-primary h-btn-s" permission="video.aliyun_hls.list" text="阿里云视频HLS转码" @click="showHlsPage()"></p-button>
+          <p-button glass="h-btn h-btn-primary h-btn-s" permission="video.aliyun_hls.list" text="阿里云HLS转码" @click="showHlsPage()"></p-button>
           <p-button
             glass="h-btn h-btn-primary h-btn-s"
             permission="addons.TencentCloudHls.videos"
-            text="腾讯云视频HLS转码"
+            text="腾讯云HLS转码"
             @click="showTencentHlsPage()"
           ></p-button>
         </ButtonGroup>
@@ -103,11 +103,12 @@ export default {
         return;
       }
 
+      this.loading = true;
+
       if (reload) {
         this.pagination.page = 1;
       }
 
-      this.loading = true;
       let data = { cid: this.cid };
       Object.assign(data, this.pagination);
 
@@ -126,13 +127,17 @@ export default {
         component: {
           vue: resolve => {
             require(['./create'], resolve);
+          },
+          datas: {
+            cid: this.cid
           }
         },
         events: {
           success: (modal, data) => {
-            R.Video.Store(data).then(resp => {
+            R.Video.Store(data).then(() => {
               modal.close();
               HeyUI.$Message.success('成功');
+
               this.getData(true);
             });
           }
@@ -145,12 +150,11 @@ export default {
         this.$Message.error('请选择需要删除的视频');
         return;
       }
-      this.loading = true;
       let ids = [];
       for (let i = 0; i < items.length; i++) {
         ids.push(items[i].id);
       }
-      R.Video.MultiDelete({ ids: ids }).then(resp => {
+      R.Video.MultiDelete({ ids: ids }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData();
       });
@@ -169,7 +173,7 @@ export default {
         },
         events: {
           success: (modal, data) => {
-            R.Video.Update(data).then(resp => {
+            R.Video.Update(data).then(() => {
               modal.close();
               HeyUI.$Message.success('成功');
               this.getData();

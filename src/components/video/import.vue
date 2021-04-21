@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel w-1000">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">视频批量导入</span>
       <div class="h-panel-right">
