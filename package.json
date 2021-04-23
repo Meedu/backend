@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "brace": "^0.11.1",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
