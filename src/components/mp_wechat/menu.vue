@@ -5,6 +5,7 @@
   height: 500px;
   float: left;
   background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   .menus {
     position: absolute;
@@ -23,10 +24,10 @@
       height: 60px;
       line-height: 60px;
       border-right: 1px solid rgba(0, 0, 0, 0.07);
+      cursor: pointer;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.07);
-        cursor: pointer;
+      &:last-child {
+        border-right: 0;
       }
 
       &.add-button {
@@ -50,7 +51,11 @@
           line-height: 50px;
           text-align: center;
           float: left;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+          &:hover {
+            background-color: rgba(0,0,0,.05);
+          }
         }
       }
     }
@@ -64,25 +69,32 @@
     </div>
     <div class="h-panel-body">
       <Row :space="10">
+        <Cell :width="24">
+          <div class="flaot-box mb-10">
+            <warn text="注意，微信公众号菜单的更新和删除均有缓存，操作后的请等待10分后进行验证。" />
+          </div>
+          <div class="float-box mb-10">
+            <Button class="h-btn h-btn-primary" :loading="loading" @click="sync">同步到微信公众号</Button>
+            <Button class="h-btn h-btn-primary" :loading="loading" @click="empty">清空当前微信公众号菜单</Button>
+          </div>
+        </Cell>
         <Cell :width="10">
           <div class="menu-box">
             <div class="menus">
-              <div class="item" v-for="(menu, index) in menus" :key="'menu'+index">
-                <span @click="editMenu(menu, index, null)">{{menu.name}}</span>
+              <div class="item" v-for="(menu, index) in menus" :key="'menu' + index">
+                <span @click="editMenu(menu, index, null)">{{ menu.name }}</span>
                 <div class="children">
-                  <div
-                    class="add-children-button children-item"
-                    v-if="menu.sub_button.list.length < 5"
-                    @click="addChildren(index)"
-                  >
+                  <div class="add-children-button children-item" v-if="menu.sub_button.list.length < 5" @click="addChildren(index)">
                     <i class="h-icon-plus"></i>
                   </div>
                   <div
                     class="childrem-item"
                     @click="editMenu(childrenItem, index, childrenIndex)"
                     v-for="(childrenItem, childrenIndex) in menu.sub_button.list"
-                    :key="'children-'+index+'-'+childrenIndex"
-                  >{{childrenItem.name}}</div>
+                    :key="'children-' + index + '-' + childrenIndex"
+                  >
+                    {{ childrenItem.name }}
+                  </div>
                 </div>
               </div>
               <div class="add-button item" @click="addMenu" v-if="menus.length < 3">
@@ -91,7 +103,7 @@
             </div>
           </div>
         </Cell>
-        <Cell :width="10">
+        <Cell :width="14">
           <Form mode="block" v-if="position.one !== null">
             <FormItem label="按钮类型">
               <Select v-model="menu.type" :datas="types" keyName="id" titleName="name"></Select>
@@ -117,6 +129,10 @@
               <FormItem label="小程序Path">
                 <input type="text" v-model="menu.pagepath" />
               </FormItem>
+              <FormItem label="URL">
+                <input type="text" v-model="menu.url" />
+                <warn text="不支持打开小程序的老板客户端将会打开该地址" />
+              </FormItem>
             </template>
 
             <FormItem>
@@ -124,17 +140,6 @@
               <Button color="default" @click="deleteMenu">删除此菜单</Button>
             </FormItem>
           </Form>
-        </Cell>
-        <Cell :width="4">
-          <div class="flaot-box mb-10">
-            <warn text="注意，微信公众号菜单的更新和删除均有缓存，操作后的请等待10分后进行验证。" />
-          </div>
-          <div class="float-box mb-10">
-            <p-del-button permission="mpWechat.menu.update" text="同步到微信公众号" @click="sync"></p-del-button>
-          </div>
-          <div class="float-box mb-10">
-            <p-del-button permission="mpWechat.menu.update" text="清空菜单" @click="empty"></p-del-button>
-          </div>
         </Cell>
       </Row>
     </div>
@@ -144,6 +149,7 @@
 export default {
   data() {
     return {
+      loading: false,
       menus: [],
       types: [
         {
@@ -235,7 +241,6 @@ export default {
       this.menu = menu;
     },
     save() {
-      console.log(this.position);
       if (this.position.one === null) {
         HeyUI.$Message.warn('数据错误');
         return;
@@ -246,6 +251,8 @@ export default {
       } else {
         Object.assign(this.menus[this.position.one]['sub_button']['list'][this.position.two], this.menu);
       }
+
+      HeyUI.$Message.success('已保存，未同步');
     },
     deleteMenu() {
       if (this.position.one === null) {
@@ -284,6 +291,11 @@ export default {
       this.menu = menu;
     },
     sync() {
+      if (this.loading) {
+        return;
+      }
+      this.loading = true;
+
       let data = {
         button: []
       };
@@ -320,6 +332,7 @@ export default {
             } else if (childrenMenu.type === 'miniprogram') {
               newChildrenMenu.appid = childrenMenu.appid;
               newChildrenMenu.pagepath = childrenMenu.pagepath;
+              newChildrenMenu.url = childrenMenu.url;
             }
             children.push(newChildrenMenu);
           }
@@ -336,18 +349,30 @@ export default {
         data.button.push(menu);
       }
 
+      console.log('菜单数据', data);
+
       R.MpWecaht.MenuUpdate({ menu: data }).then(() => {
-        HeyUI.$Message.success('菜单更新成功');
+        HeyUI.$Message.success('已同步最新的菜单到微信公众号');
+
         this.position.one = null;
         this.position.two = null;
         this.getMenu();
+
+        this.loading = false;
       });
     },
     empty() {
+      if (this.loading) {
+        return;
+      }
+      this.loading = true;
+
       R.MpWecaht.MenuEmpty().then(() => {
         this.position.one = null;
         this.position.two = null;
         HeyUI.$Message.success('微信公众号菜单已清空');
+
+        this.loading = false;
       });
     }
   }

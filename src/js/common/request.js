@@ -294,7 +294,13 @@ const Request = {
     },
     RemarkUpdate(param) {
       return Ajax.putJson('/member/' + param.id + '/remark', param);
-    }
+    },
+    SendMessage(id, message) {
+      return Ajax.postJson('/member/' + id + '/message', { message: message });
+    },
+    VideoWatchRecords(param) {
+      return Ajax.get('/member/' + param.id + '/detail/videoWatchRecords', param);
+    },
   },
   Course: {
     List(param) {
@@ -329,6 +335,9 @@ const Request = {
     },
     SubscribeCreate(param) {
       return Ajax.postJson('/course/' + param.course_id + '/subscribe/create', param);
+    },
+    VideoWatchRecords(courseId, userId) {
+      return Ajax.get('/course/' + courseId + '/user/' + userId + '/watch/records');
     }
   },
   CourseAttach: {

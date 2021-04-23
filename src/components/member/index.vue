@@ -52,11 +52,7 @@
           <TableItem title="用户ID" prop="id" :sort="true" :width="120"></TableItem>
           <TableItem title="昵称" prop="nick_name" :width="120"></TableItem>
           <TableItem title="手机号" prop="mobile" :width="120"></TableItem>
-          <TableItem title="注册时间" :sort="true" :width="120">
-            <template slot-scope="{ data }">
-              <date-text :date="data.created_at"></date-text>
-            </template>
-          </TableItem>
+          <TableItem title="注册时间" prop="created_at" :sort="true" :width="200"></TableItem>
           <TableItem title="积分" prop="credit1" :sort="true" :width="100"></TableItem>
           <TableItem title="VIP" :width="150">
             <template slot-scope="{ data }">
@@ -77,20 +73,29 @@
               </template>
             </template>
           </TableItem>
-          <TableItem title="操作" align="center" :width="240" fixed="right">
+          <TableItem title="操作" align="center" :width="300" fixed="right">
             <template slot-scope="{ data }">
               <ButtonGroup>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.detail" text="详情" @click="detail(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.edit" text="编辑" @click="edit(data)"></p-button>
+              </ButtonGroup>
+
+              <ButtonGroup>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.tags" text="标签" @click="showTags(data)"></p-button>
                 <p-button glass="h-btn h-btn-s h-btn-primary" permission="member.remark" text="备注" @click="showRemark(data)"></p-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="member.message.send"
+                  text="发消息"
+                  @click="showSendMessage(data)"
+                ></p-button>
               </ButtonGroup>
             </template>
           </TableItem>
         </Table>
       </div>
       <div class="float-box mb-10">
-        <Pagination v-if="pagination.total > 0" align="right" v-model="pagination" @change="changePage" />
+        <Pagination align="right" v-model="pagination" @change="changePage" />
       </div>
     </div>
   </div>
@@ -252,6 +257,25 @@ export default {
           success: (modal, data) => {
             modal.close();
             this.getData();
+          }
+        }
+      });
+    },
+    showSendMessage(item) {
+      this.$Modal({
+        closeOnMask: false,
+        hasCloseIcon: true,
+        component: {
+          vue: resolve => {
+            require(['./send_message'], resolve);
+          },
+          datas: {
+            id: item.id
+          }
+        },
+        events: {
+          success: modal => {
+            modal.close();
           }
         }
       });

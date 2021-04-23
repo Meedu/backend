@@ -31,12 +31,20 @@
       <div class="h-panel-body">
         <Form ref="form" mode="block" :validOnChange="true" :showErrorTip="true" :rules="rules" :model="video">
           <Row :space="10">
-            <Cell :width="5">
-              <FormItem label="所属课程" prop="course_id">
-                <Select v-model="video.course_id" :datas="courses" keyName="id" titleName="title" :filterable="true" @change="selectCourse"></Select>
+            <Cell :width="18">
+              <FormItem label="视频名" prop="title">
+                <input type="text" v-model="video.title" />
               </FormItem>
             </Cell>
-            <Cell :width="4">
+            <Cell :width="6">
+              <FormItem label="上架时间" prop="published_at">
+                <DatePicker v-model="video.published_at" type="datetime"></DatePicker>
+              </FormItem>
+            </Cell>
+          </Row>
+
+          <Row :space="10">
+            <Cell :width="9">
               <FormItem label="章节" prop="chapter_id">
                 <Select v-model="video.chapter_id" :datas="chapters" keyName="id" titleName="title" :filterable="true"></Select>
               </FormItem>
@@ -63,19 +71,6 @@
               <FormItem label="禁止快进" prop="ban_drag">
                 <template v-slot:label>禁止快进</template>
                 <h-switch v-model="video.ban_drag" :trueValue="1" :falseValue="0"></h-switch>
-              </FormItem>
-            </Cell>
-          </Row>
-
-          <Row :space="10">
-            <Cell :width="18">
-              <FormItem label="视频名" prop="title">
-                <input type="text" v-model="video.title" />
-              </FormItem>
-            </Cell>
-            <Cell :width="6">
-              <FormItem label="上架时间" prop="published_at">
-                <DatePicker v-model="video.published_at" type="datetime"></DatePicker>
               </FormItem>
             </Cell>
           </Row>

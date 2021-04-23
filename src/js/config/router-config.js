@@ -96,12 +96,6 @@ const initRouter = () => {
         meta: { title: '课程' }
       },
       {
-        path: '/video',
-        name: 'Video',
-        component: (resolve) => require(['components/video/index'], resolve),
-        meta: { title: '视频' }
-      },
-      {
         path: '/setting',
         name: 'Setting',
         component: (resolve) => require(['components/setting/index'], resolve),

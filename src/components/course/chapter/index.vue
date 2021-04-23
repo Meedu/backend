@@ -1,5 +1,5 @@
 <template>
-  <div class="h-panel">
+  <div class="h-panel w-1200">
     <div class="h-panel-bar">
       <span class="h-panel-title">章节</span>
       <div class="h-panel-right">
@@ -15,8 +15,10 @@
         <TableItem prop="title" title="章节"></TableItem>
         <TableItem title="操作" align="center" :width="200">
           <template slot-scope="{ data }">
-            <p-del-button permission="course_chapter.destroy" @click="remove(datas, data)"></p-del-button>
-            <p-button glass="h-btn h-btn-s h-btn-primary" permission="course_chapter.edit" text="编辑" @click="edit(data)"></p-button>
+            <ButtonGroup>
+              <p-del-button permission="course_chapter.destroy" @click="remove(datas, data)"></p-del-button>
+              <p-button glass="h-btn h-btn-s h-btn-primary" permission="course_chapter.edit" text="编辑" @click="edit(data)"></p-button>
+            </ButtonGroup>
           </template>
         </TableItem>
       </Table>
