@@ -239,8 +239,8 @@ export default {
   },
   methods: {
     init() {
-      R.Video.Create().then(resp => {
-        this.courses = resp.data.courses;
+      R.CourseChapter.List({ course_id: this.cid }).then(resp => {
+        this.chapters = resp.data.chapters;
       });
     },
     back() {
@@ -252,11 +252,6 @@ export default {
         this.video.render_desc = this.video.original_desc;
         this.$emit('success', this.video);
       }
-    },
-    selectCourse(course) {
-      R.CourseChapter.List({ course_id: course.id }).then(resp => {
-        this.chapters = resp.data.chapters;
-      });
     },
     switchTab(item) {
       if (this.video.aliyun_video_id || this.video.tencent_video_id || this.video.url) {
