@@ -249,11 +249,8 @@ export default {
       R.Video.Edit({ id: this.id }).then(res => {
         this.video = res.data.video;
         this.tabActive();
-        this.selectCourse({ id: this.video.course_id });
-      });
 
-      R.Video.Create().then(resp => {
-        this.courses = resp.data.courses;
+        this.selectCourse({ id: this.video.course_id });
       });
     },
     create() {
