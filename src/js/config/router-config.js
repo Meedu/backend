@@ -179,6 +179,11 @@ const initRouter = () => {
         component: (resolve) => require(['components/extentions/paper/paper/index'], resolve),
         meta: { title: '试卷' }
       }, {
+        path: '/MockPaper',
+        name: 'MockPaper',
+        component: (resolve) => require(['components/extentions/paper/mock_paper/index'], resolve),
+        meta: { title: '模拟考试' }
+      }, {
         path: '/PaperQuestion',
         name: 'PaperQuestion',
         component: (resolve) => require(['components/extentions/paper/question/index'], resolve),

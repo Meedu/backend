@@ -1017,6 +1017,38 @@ const Request = {
         UserDetail(param) {
           return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id + '/user/detail', param);
         }
+      },
+      MockPaper: {
+        List(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/index', param);
+        },
+        Create(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/create', param);
+        },
+        Store(param) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/create', param);
+        },
+        Edit(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id);
+        },
+        Update(param) {
+          return Ajax.putJson('/backend/addons/Paper/mock_paper/' + param.id, param);
+        },
+        Delete(param) {
+          return Ajax.delete('/backend/addons/Paper/mock_paper/' + param.id);
+        },
+        Users(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/users', param);
+        },
+        Records(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/records', param);
+        },
+        AddUser(param) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + param.id + '/user/insert', param);
+        },
+        DelUser(param) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + param.id + '/user/delete', param);
+        },
       }
     },
     promoCodeImport: {
