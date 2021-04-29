@@ -21,7 +21,7 @@
               <Select v-model="paper.category_id" :datas="categories" keyName="id" titleName="name" :filterable="true"></Select>
             </FormItem>
           </Cell>
-
+          <!-- 
           <Cell :width="6">
             <FormItem label="分数" prop="score">
               <input type="number" v-model="paper.score" placeholder="分数" />
@@ -32,7 +32,7 @@
             <FormItem label="及格分" prop="pass_score">
               <input type="number" v-model="paper.pass_score" placeholder="及格分" />
             </FormItem>
-          </Cell>
+          </Cell> -->
 
           <Cell :width="6">
             <FormItem label="时间" prop="expired_minutes">
@@ -124,7 +124,7 @@ export default {
         is_invite: 0
       },
       rules: {
-        required: ['category_id', 'title', 'score', 'pass_score', 'expired_minutes', 'is_vip_free', 'charge']
+        required: ['category_id', 'title', 'expired_minutes', 'is_vip_free', 'charge']
       },
       categories: [],
       questionCategories: [],

@@ -63,7 +63,7 @@
                   glass="h-btn h-btn-s h-btn-primary"
                   permission="addons.Paper.mock_paper.records"
                   text="考试记录"
-                  @click="showUserPapers(data)"
+                  @click="showRecords(data)"
                 ></p-button>
               </ButtonGroup>
             </template>
@@ -147,7 +147,7 @@ export default {
       });
     },
     remove(data, item) {
-      R.Extentions.paper.Paper.Delete({ id: item.id }).then(resp => {
+      R.Extentions.paper.Paper.Delete({ id: item.id }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData(true);
       });
@@ -165,7 +165,7 @@ export default {
           }
         },
         events: {
-          success: (modal, data) => {
+          success: modal => {
             this.getData();
             modal.close();
           }
@@ -185,7 +185,27 @@ export default {
           }
         },
         events: {
-          success: (modal, data) => {
+          success: modal => {
+            this.getData();
+            modal.close();
+          }
+        }
+      });
+    },
+    showRecords(item) {
+      this.$Modal({
+        hasCloseIcon: true,
+        closeOnMask: false,
+        component: {
+          vue: resolve => {
+            require(['./records'], resolve);
+          },
+          datas: {
+            id: item.id
+          }
+        },
+        events: {
+          success: modal => {
             this.getData();
             modal.close();
           }
