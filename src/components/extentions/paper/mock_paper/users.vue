@@ -50,10 +50,9 @@
               <span v-else>{{ users[data.user_id].nick_name }}</span>
             </template>
           </TableItem>
-          <TableItem title="及格" :width="80">
+          <TableItem title="最高得分" :width="150">
             <template slot-scope="{ data }">
-              <span v-if="data.score >= passScore">是</span>
-              <span v-else class="red">不及格</span>
+              <span>{{ data.get_score }}分</span>
             </template>
           </TableItem>
           <TableItem title="操作" align="center" :width="150">
@@ -101,8 +100,8 @@ export default {
       };
       Object.assign(data, this.pagination);
       R.Extentions.paper.MockPaper.Users(data).then(resp => {
-        this.datas = resp.data.data;
-        this.pagination.total = resp.data.total;
+        this.datas = resp.data.data.data;
+        this.pagination.total = resp.data.data.total;
 
         this.loading = false;
         this.passScore = resp.data.pass_score;

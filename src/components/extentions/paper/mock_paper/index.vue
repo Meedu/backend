@@ -37,13 +37,6 @@
             </template>
           </TableItem>
           <TableItem prop="title" title="标题" :width="500"></TableItem>
-          <TableItem title="及格/总分" :width="120">
-            <template slot-scope="{ data }">
-              <span
-                ><b class="red">{{ data.pass_score }}分</b>&nbsp;/&nbsp;{{ data.score }}分</span
-              >
-            </template>
-          </TableItem>
           <TableItem prop="expired_minutes" title="时长" unit="m" :width="80"></TableItem>
           <TableItem title="操作" align="center" :width="400" fixed="right">
             <template slot-scope="{ data }">

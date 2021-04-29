@@ -36,8 +36,8 @@
           </TableItem>
           <TableItem title="分数" :width="100">
             <template slot-scope="{ data }">
-              <span v-if="data.status === 2">{{ data.score }}分</span>
-              <span v-else class="red">未完成</span>
+              <span v-if="data.status === 1">{{ data.get_score }}分</span>
+              <span v-else class="red">考试中</span>
             </template>
           </TableItem>
           <TableItem title="状态" :width="100">
