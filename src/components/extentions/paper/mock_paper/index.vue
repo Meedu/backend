@@ -46,11 +46,17 @@
               </ButtonGroup>
 
               <ButtonGroup>
-                <p-button
+                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
                   permission="addons.Paper.mock_paper.users"
-                  text="参与用户"
+                  text="订阅用户"
                   @click="showUsers(data)"
+                ></p-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="addons.Paper.mock_paper.statistics"
+                  text="分数统计"
+                  @click="showStatistics(data)"
                 ></p-button>
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
@@ -140,7 +146,7 @@ export default {
       });
     },
     remove(data, item) {
-      R.Extentions.paper.Paper.Delete({ id: item.id }).then(() => {
+      R.Extentions.paper.MockPaper.Delete({ id: item.id }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData(true);
       });
@@ -165,13 +171,33 @@ export default {
         }
       });
     },
-    showUsers(item) {
-      this.$Modal({
+    showUsers(item){
+       this.$Modal({
         hasCloseIcon: true,
         closeOnMask: false,
         component: {
           vue: resolve => {
             require(['./users'], resolve);
+          },
+          datas: {
+            id: item.id
+          }
+        },
+        events: {
+          success: modal => {
+            this.getData();
+            modal.close();
+          }
+        }
+      });
+    },
+    showStatistics(item) {
+      this.$Modal({
+        hasCloseIcon: true,
+        closeOnMask: false,
+        component: {
+          vue: resolve => {
+            require(['./statistics'], resolve);
           },
           datas: {
             id: item.id

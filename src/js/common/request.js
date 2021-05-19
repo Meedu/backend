@@ -860,6 +860,9 @@ const Request = {
         Users(param) {
           return Ajax.get('/backend/addons/Paper/paper/' + param.id + '/user', param);
         },
+        Statistics(param) {
+          return Ajax.get('/backend/addons/Paper/paper/' + param.id + '/statistics', param);
+        },
         UserAdd(param) {
           return Ajax.postJson('/backend/addons/Paper/paper/' + param.id + '/user', param);
         },
@@ -1039,6 +1042,9 @@ const Request = {
         },
         Users(param) {
           return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/users', param);
+        },
+        Statistics(param) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/statistics', param);
         },
         Records(param) {
           return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/records', param);
