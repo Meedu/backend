@@ -140,7 +140,7 @@ export default {
       });
     },
     remove(data, item) {
-      R.Extentions.paper.Paper.Delete({ id: item.id }).then(() => {
+      R.Extentions.paper.MockPaper.Delete({ id: item.id }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData(true);
       });
