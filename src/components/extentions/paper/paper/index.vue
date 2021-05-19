@@ -45,7 +45,7 @@
             </template>
           </TableItem>
           <TableItem prop="expired_minutes" title="时长" unit="m" :width="80"></TableItem>
-          <TableItem title="操作" align="center" :width="400" fixed="right">
+          <TableItem title="操作" align="center" :width="500" fixed="right">
             <template slot-scope="{ data }">
               <ButtonGroup>
                 <p-del-button permission="addons.Paper.paper.delete" @click="remove(datas, data)"></p-del-button>
@@ -62,8 +62,14 @@
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
                   permission="addons.Paper.paper.users"
-                  text="参与用户"
+                  text="订阅用户"
                   @click="showUsers(data)"
+                ></p-button>
+                <p-button
+                  glass="h-btn h-btn-s h-btn-primary"
+                  permission="addons.Paper.paper.statistics"
+                  text="分数统计"
+                  @click="showStatistics(data)"
                 ></p-button>
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
@@ -185,6 +191,26 @@ export default {
         component: {
           vue: resolve => {
             require(['./users'], resolve);
+          },
+          datas: {
+            id: item.id
+          }
+        },
+        events: {
+          success: (modal, data) => {
+            this.getData();
+            modal.close();
+          }
+        }
+      });
+    },
+    showStatistics(item) {
+      this.$Modal({
+        hasCloseIcon: true,
+        closeOnMask: false,
+        component: {
+          vue: resolve => {
+            require(['./statistics'], resolve);
           },
           datas: {
             id: item.id
