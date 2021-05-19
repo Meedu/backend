@@ -25,7 +25,7 @@
 <template>
   <div class="h-panel w-1200">
     <div class="h-panel-bar">
-      <span class="h-panel-title">参与用户</span>
+      <span class="h-panel-title">订阅用户</span>
       <div class="h-panel-right">
         <Button @click="$emit('close')" :text="true">取消</Button>
       </div>
@@ -44,15 +44,16 @@
       <div class="float-box mb-10">
         <Table ref="table" :loading="loading" :datas="datas">
           <TableItem title="用户ID" prop="user_id" :width="120"></TableItem>
-          <TableItem title="用户" :width="120">
+           <TableItem title="手机号" :width="120">
             <template slot-scope="{ data }">
-              <span v-if="typeof users[data.user_id] === 'undefined'" class="red">已删除</span>
-              <span v-else>{{ users[data.user_id].nick_name }}</span>
+              <span v-if="data.user === null" class="red">已删除</span>
+              <span v-else>{{ data.user.mobile }}</span>
             </template>
           </TableItem>
-          <TableItem title="最高得分" :width="150">
+          <TableItem title="用户" :width="120">
             <template slot-scope="{ data }">
-              <span>{{ data.get_score }}分</span>
+              <span v-if="data.user === null" class="red">已删除</span>
+              <span v-else>{{ data.user.nick_name }}</span>
             </template>
           </TableItem>
           <TableItem title="操作" align="center" :width="150">
@@ -82,8 +83,6 @@ export default {
       datas: [],
       loading: false,
       mobiles: '',
-      users: [],
-      passScore: 0
     };
   },
   mounted() {
@@ -102,10 +101,7 @@ export default {
       R.Extentions.paper.MockPaper.Users(data).then(resp => {
         this.datas = resp.data.data.data;
         this.pagination.total = resp.data.data.total;
-
         this.loading = false;
-        this.passScore = resp.data.pass_score;
-        this.users = resp.data.users;
       });
     },
     userAdd() {
