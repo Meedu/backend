@@ -301,6 +301,9 @@ const Request = {
     VideoWatchRecords(param) {
       return Ajax.get('/member/' + param.id + '/detail/videoWatchRecords', param);
     },
+    Import(params) {
+      return Ajax.postJson('/member/import', params);
+    }
   },
   Course: {
     List(param) {

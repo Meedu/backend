@@ -105,18 +105,6 @@
 
           <Row :space="10">
             <Cell :width="6">
-              <FormItem label="Web播放器" prop="player_pc">
-                <template v-slot:label>Web播放器</template>
-                <Select v-model="video.player_pc" :datas="playerPc"></Select>
-              </FormItem>
-            </Cell>
-            <Cell :width="6">
-              <FormItem label="手机播放器" prop="player_h5">
-                <template v-slot:label>手机播放器</template>
-                <Select v-model="video.player_h5" :datas="playerH5"></Select>
-              </FormItem>
-            </Cell>
-            <Cell :width="6">
               <FormItem label="评论开关" prop="comment_status">
                 <template v-slot:label>评论开关</template>
                 <Select v-model="video.comment_status" :datas="commentStatus"></Select>
@@ -136,10 +124,6 @@
               </FormItem>
             </Cell>
           </Row>
-
-          <FormItem label="Slug" prop="slug">
-            <input type="text" v-model="video.slug" placeholder="可选" />
-          </FormItem>
         </Form>
       </div>
     </div>
@@ -182,7 +166,7 @@ export default {
       courses: [],
       chapters: [],
       tabs: ['阿里云点播', '腾讯云点播', 'URL地址'],
-      tab: '阿里云点播',
+      tab: '腾讯云点播',
       commentStatus: [
         {
           title: '禁止评论',

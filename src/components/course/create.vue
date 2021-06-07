@@ -31,11 +31,6 @@
               <h-switch v-model="course.is_show" :trueValue="1" :falseValue="-1"></h-switch>
             </FormItem>
           </Cell>
-          <Cell :width="3">
-            <FormItem label="推荐" prop="is_rec">
-              <h-switch v-model="course.is_rec" :trueValue="1" :falseValue="0"></h-switch>
-            </FormItem>
-          </Cell>
         </Row>
 
         <Row :space="10">
@@ -51,10 +46,6 @@
           </Cell>
         </Row>
 
-        <FormItem label="Slug" prop="slug">
-          <input type="text" v-model="course.slug" placeholder="不清楚可不填写" />
-        </FormItem>
-
         <FormItem label="课程封面" prop="thumb">
           <image-upload v-model="course.thumb" name="课程封面" help="长宽比4:3，建议尺寸：400x300像素"></image-upload>
         </FormItem>
@@ -67,12 +58,18 @@
           <tinymce-editor v-model="course.original_desc"></tinymce-editor>
         </FormItem>
 
-        <FormItem label="SEO描述" prop="seo_description">
-          <textarea v-model="course.seo_description" rows="2"></textarea>
-        </FormItem>
-        <FormItem label="SEO关键字" prop="seo_keywords">
-          <textarea v-model="course.seo_keywords" rows="1"></textarea>
-        </FormItem>
+        <Row :space="10">
+          <Cell :width="12">
+            <FormItem label="SEO描述" prop="seo_description">
+              <textarea v-model="course.seo_description" rows="2"></textarea>
+            </FormItem>
+          </Cell>
+          <Cell :width="12">
+            <FormItem label="SEO关键字" prop="seo_keywords">
+              <textarea v-model="course.seo_keywords" rows="2"></textarea>
+            </FormItem>
+          </Cell>
+        </Row>
       </Form>
     </div>
   </div>
@@ -80,13 +77,25 @@
 <script>
 import TinymceEditor from '../common/tinymce';
 
-import Course from 'model/Course';
-
 export default {
   components: { TinymceEditor },
   data() {
     return {
-      course: Course.parse({}),
+      course: {
+        category_id: null,
+        title: null,
+        slug: null,
+        thumb: null,
+        charge: null,
+        short_description: null,
+        description: null,
+        seo_keywords: null,
+        seo_description: null,
+        published_at: null,
+        is_show: null,
+        is_rec: 0,
+        comment_status: null
+      },
       rules: {
         required: [
           'category_id',

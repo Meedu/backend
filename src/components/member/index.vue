@@ -46,6 +46,7 @@
       </div>
       <div class="float-box mb-10">
         <p-button glass="h-btn h-btn-primary" permission="member.store" text="添加" @click="create()"></p-button>
+        <p-button glass="h-btn h-btn-primary" permission="member.import" text="批量导入" @click="importHandler()"></p-button>
       </div>
       <div class="float-box mb-10">
         <Table :loading="loading" :datas="datas" @sort="sortEvt">
@@ -112,7 +113,7 @@ export default {
       cond: {
         keywords: '',
         role_id: null,
-        sort: 'created_at',
+        sort: 'id',
         order: 'desc',
         tag_id: null
       },
@@ -271,6 +272,22 @@ export default {
           },
           datas: {
             id: item.id
+          }
+        },
+        events: {
+          success: modal => {
+            modal.close();
+          }
+        }
+      });
+    },
+    importHandler() {
+       this.$Modal({
+        closeOnMask: false,
+        hasCloseIcon: true,
+        component: {
+          vue: resolve => {
+            require(['./import'], resolve);
           }
         },
         events: {
