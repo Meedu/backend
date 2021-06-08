@@ -30,6 +30,10 @@
           </TableItem>
         </Table>
       </div>
+
+      <div class="float-box mb-10">
+        <Pagination class="mt-10" align="right" v-model="pagination" @change="changePage" />
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +42,11 @@ export default {
   data() {
     return {
       datas: [],
+       pagination: {
+        page: 1,
+        size: 10,
+        total: 0
+      },
       loading: false
     };
   },
@@ -52,6 +61,7 @@ export default {
       this.loading = true;
       R.Extentions.paper.PaperCategory.List(this.pagination).then(resp => {
         this.datas = resp.data.data.data;
+        this.pagination.total = resp.data.data.total;
         this.loading = false;
         setTimeout(() => {
           this.$refs.table.expandAll();
