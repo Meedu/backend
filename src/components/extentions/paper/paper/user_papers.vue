@@ -39,9 +39,15 @@
               <span v-else class="red">不存在</span>
             </template>
           </TableItem>
-          <TableItem title="分数" :width="100">
+          <TableItem title="得分" :width="100">
             <template slot-scope="{ data }">
               <span v-if="data.status === 2">{{ data.score }}分</span>
+              <span v-else class="red">未完成</span>
+            </template>
+          </TableItem>
+          <TableItem title="用时" :width="100">
+            <template slot-scope="{ data }">
+              <span v-if="data.status === 2"><duration-text :seconds="data.used_seconds" /></span>
               <span v-else class="red">未完成</span>
             </template>
           </TableItem>
@@ -76,7 +82,12 @@
   </div>
 </template>
 <script>
+import DurationText from '@/components/common/duration-text';
+
 export default {
+  components: {
+    DurationText
+  },
   props: ['paper_id'],
   data() {
     return {
