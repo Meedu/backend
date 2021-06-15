@@ -50,9 +50,10 @@
             v-else-if="question.type === 2"
           ></paper-question-select>
           <paper-question-input
-            :content="question.answer"
+            :content="question.answer.split(',')"
+            :length="question.qa_blank_num"
             @update="contentUpdate"
-            v-else-if="question.type === 3 || question.type === 4"
+            v-else-if="question.type === 3"
           ></paper-question-input>
           <paper-question-judge
             :content="parseInt(question.answer) === 1 ? '正确' : '错误'"
@@ -99,7 +100,8 @@ export default {
         option8: null,
         option9: null,
         option10: null,
-        remark: null
+        remark: null,
+        qa_blank_num: null
       },
       rules: {
         required: ['category_id', 'type', 'level', 'content', 'score']
@@ -124,6 +126,8 @@ export default {
     contentUpdate(t, val, length, options) {
       if (t === 'input' || t === 'judge') {
         this.question.answer = val;
+        // 填空题空数
+        this.question.qa_blank_num = options;
       } else if (t === 'choice') {
         this.question.answer = val;
         for (let i = 1; i <= length; i++) {
