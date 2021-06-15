@@ -13,7 +13,6 @@
             <Cell :width="6">
               <FormItem label="分类">
                 <Select v-model="filter.category_id" :datas="categories" keyName="id" titleName="name" :filterable="true"></Select>
-                <warn text="必须选择分类之后才能查询出试题" />
               </FormItem>
             </Cell>
             <Cell :width="6">

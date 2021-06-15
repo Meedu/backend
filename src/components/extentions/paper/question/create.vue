@@ -39,7 +39,8 @@
         <div class="answer-box">
           <paper-question-choice @update="contentUpdate" v-if="question.type === 1"></paper-question-choice>
           <paper-question-select @update="contentUpdate" v-else-if="question.type === 2"></paper-question-select>
-          <paper-question-input @update="contentUpdate" v-else-if="question.type === 3 || question.type === 4"></paper-question-input>
+          <paper-question-input @update="contentUpdate" :content="[]" :length="1" v-else-if="question.type === 3"></paper-question-input>
+          <!-- <paper-question-qa @update="contentUpdate" v-else-if="question.type === 4"></paper-question-qa> -->
           <paper-question-judge @update="contentUpdate" v-else-if="question.type === 5"></paper-question-judge>
           <paper-question-cap @update="contentUpdate" v-else-if="question.type === 6"></paper-question-cap>
         </div>

@@ -56,7 +56,7 @@
                 <p-button
                   glass="h-btn h-btn-s h-btn-primary"
                   permission="addons.Paper.paper.questions.list"
-                  text="设置习题"
+                  text="题目设置"
                   @click="showQuestion(data)"
                 ></p-button>
                 <p-button

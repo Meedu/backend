@@ -50,9 +50,10 @@
             v-else-if="question.type === 2"
           ></paper-question-select>
           <paper-question-input
-            :content="question.answer"
+            :content="question.answer.split(',')"
+            :length="question.answer.split(',').length"
             @update="contentUpdate"
-            v-else-if="question.type === 3 || question.type === 4"
+            v-else-if="question.type === 3"
           ></paper-question-input>
           <paper-question-judge
             :content="parseInt(question.answer) === 1 ? '正确' : '错误'"
