@@ -102,7 +102,6 @@ export default {
     contentUpdate(t, val, length, options) {
       if (t === 'input' || t === 'judge') {
         this.question.answer = val;
-        this.question.qa_blank_num = options;
       } else if (t === 'choice') {
         this.question.answer = val;
         for (let i = 1; i <= 10; i++) {

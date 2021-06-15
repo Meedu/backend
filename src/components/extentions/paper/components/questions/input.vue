@@ -62,7 +62,7 @@ export default {
     v() {
       let c = this.v.join(',');
       console.log(this.v, c);
-      this.$emit('update', 'input', c, this.len);
+      this.$emit('update', 'input', c);
     }
   },
   methods: {

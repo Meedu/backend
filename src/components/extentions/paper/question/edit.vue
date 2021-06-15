@@ -51,7 +51,7 @@
           ></paper-question-select>
           <paper-question-input
             :content="question.answer.split(',')"
-            :length="question.qa_blank_num"
+            :length="question.answer.split(',').length"
             @update="contentUpdate"
             v-else-if="question.type === 3"
           ></paper-question-input>
@@ -100,8 +100,7 @@ export default {
         option8: null,
         option9: null,
         option10: null,
-        remark: null,
-        qa_blank_num: null
+        remark: null
       },
       rules: {
         required: ['category_id', 'type', 'level', 'content', 'score']
@@ -126,8 +125,6 @@ export default {
     contentUpdate(t, val, length, options) {
       if (t === 'input' || t === 'judge') {
         this.question.answer = val;
-        // 填空题空数
-        this.question.qa_blank_num = options;
       } else if (t === 'choice') {
         this.question.answer = val;
         for (let i = 1; i <= length; i++) {
