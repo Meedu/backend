@@ -100,7 +100,7 @@ export default {
       Object.assign(data, this.pagination);
       R.Extentions.paper.Paper.Users(data).then(resp => {
         this.datas = resp.data.data.data;
-        this.pagination.total = resp.data.total;
+        this.pagination.total = resp.data.data.total;
 
         this.loading = false;
       });
