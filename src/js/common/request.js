@@ -2,34 +2,34 @@ import Ajax from './ajax';
 
 const Request = {
   MpWecaht: {
-    Menu(param) {
-      return Ajax.get('/mpWechat/menu', param);
+    Menu(params) {
+      return Ajax.get('/mpWechat/menu', params);
     },
-    MenuUpdate(param) {
-      return Ajax.putJson('/mpWechat/menu', param);
+    MenuUpdate(params) {
+      return Ajax.putJson('/mpWechat/menu', params);
     },
-    MenuEmpty(param) {
-      return Ajax.delete('/mpWechat/menu', param);
+    MenuEmpty(params) {
+      return Ajax.delete('/mpWechat/menu', params);
     }
   },
   MpWechatMessageReply: {
-    List(param) {
-      return Ajax.get('/mpWechatMessageReply', param);
+    List(params) {
+      return Ajax.get('/mpWechatMessageReply', params);
     },
-    Create(param) {
-      return Ajax.get('/mpWechatMessageReply/create', param);
+    Create(params) {
+      return Ajax.get('/mpWechatMessageReply/create', params);
     },
-    Store(param) {
-      return Ajax.postJson('/mpWechatMessageReply', param);
+    Store(params) {
+      return Ajax.postJson('/mpWechatMessageReply', params);
     },
-    Edit(param) {
-      return Ajax.get('/mpWechatMessageReply/' + param.id);
+    Edit(params) {
+      return Ajax.get('/mpWechatMessageReply/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/mpWechatMessageReply/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/mpWechatMessageReply/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/mpWechatMessageReply/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/mpWechatMessageReply/' + params.id, params);
     }
   },
   Dashboard: {
@@ -47,23 +47,23 @@ const Request = {
     index() {
       return Ajax.get('/addons');
     },
-    repository(param) {
-      return Ajax.get('/addons/repository', param);
+    repository(params) {
+      return Ajax.get('/addons/repository', params);
     },
-    user(param) {
-      return Ajax.get('/addons/repository/user', param);
+    user(params) {
+      return Ajax.get('/addons/repository/user', params);
     },
-    buy(param) {
-      return Ajax.get('/addons/repository/buy', param);
+    buy(params) {
+      return Ajax.get('/addons/repository/buy', params);
     },
-    install(param) {
-      return Ajax.get('/addons/repository/install', param);
+    install(params) {
+      return Ajax.get('/addons/repository/install', params);
     },
-    upgrade(param) {
-      return Ajax.get('/addons/repository/upgrade', param);
+    upgrade(params) {
+      return Ajax.get('/addons/repository/upgrade', params);
     },
-    switchHandler(param) {
-      return Ajax.postJson('/addons/switch', param);
+    switchHandler(params) {
+      return Ajax.postJson('/addons/switch', params);
     }
   },
   User: {
@@ -75,491 +75,491 @@ const Request = {
     }
   },
   Login: {
-    login(param) {
-      return Ajax.postJson('/login', param);
+    login(params) {
+      return Ajax.postJson('/login', params);
     }
   },
   Announcement: {
-    List(param) {
-      return Ajax.get('/announcement', param);
+    List(params) {
+      return Ajax.get('/announcement', params);
     },
-    Store(param) {
-      return Ajax.postJson('/announcement', param);
+    Store(params) {
+      return Ajax.postJson('/announcement', params);
     },
-    Edit(param) {
-      return Ajax.get('/announcement/' + param.id);
+    Edit(params) {
+      return Ajax.get('/announcement/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/announcement/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/announcement/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/announcement/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/announcement/' + params.id, params);
     }
   },
   CourseCategory: {
-    List(param) {
-      return Ajax.get('/courseCategory', param);
+    List(params) {
+      return Ajax.get('/courseCategory', params);
     },
-    Create(param) {
-      return Ajax.postJson('/courseCategory', param);
+    Create(params) {
+      return Ajax.postJson('/courseCategory', params);
     },
-    Edit(param) {
-      return Ajax.get('/courseCategory/' + param.id);
+    Edit(params) {
+      return Ajax.get('/courseCategory/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/courseCategory/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/courseCategory/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/courseCategory/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/courseCategory/' + params.id, params);
     }
   },
   Role: {
-    List(param) {
-      return Ajax.get('/role', param);
+    List(params) {
+      return Ajax.get('/role', params);
     },
-    All(param) {
-      return Ajax.get('/role/all', param);
+    All(params) {
+      return Ajax.get('/role/all', params);
     },
-    Store(param) {
-      return Ajax.postJson('/role', param);
+    Store(params) {
+      return Ajax.postJson('/role', params);
     },
-    Edit(param) {
-      return Ajax.get('/role/' + param.id);
+    Edit(params) {
+      return Ajax.get('/role/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/role/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/role/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/role/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/role/' + params.id, params);
     }
   },
   Link: {
-    List(param) {
-      return Ajax.get('/link', param);
+    List(params) {
+      return Ajax.get('/link', params);
     },
-    Store(param) {
-      return Ajax.postJson('/link', param);
+    Store(params) {
+      return Ajax.postJson('/link', params);
     },
-    Edit(param) {
-      return Ajax.get('/link/' + param.id);
+    Edit(params) {
+      return Ajax.get('/link/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/link/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/link/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/link/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/link/' + params.id, params);
     }
   },
   Slider: {
-    List(param) {
-      return Ajax.get('/slider', param);
+    List(params) {
+      return Ajax.get('/slider', params);
     },
-    Store(param) {
-      return Ajax.postJson('/slider', param);
+    Store(params) {
+      return Ajax.postJson('/slider', params);
     },
-    Edit(param) {
-      return Ajax.get('/slider/' + param.id);
+    Edit(params) {
+      return Ajax.get('/slider/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/slider/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/slider/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/slider/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/slider/' + params.id, params);
     }
   },
   IndexBanner: {
-    List(param) {
-      return Ajax.get('/indexBanner', param);
+    List(params) {
+      return Ajax.get('/indexBanner', params);
     },
     Create() {
       return Ajax.get('/indexBanner/create');
     },
-    Store(param) {
-      return Ajax.postJson('/indexBanner', param);
+    Store(params) {
+      return Ajax.postJson('/indexBanner', params);
     },
-    Edit(param) {
-      return Ajax.get('/indexBanner/' + param.id);
+    Edit(params) {
+      return Ajax.get('/indexBanner/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/indexBanner/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/indexBanner/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/indexBanner/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/indexBanner/' + params.id, params);
     }
   },
   AdFrom: {
-    List(param) {
-      return Ajax.get('/ad_from', param);
+    List(params) {
+      return Ajax.get('/ad_from', params);
     },
-    Store(param) {
-      return Ajax.postJson('/ad_from', param);
+    Store(params) {
+      return Ajax.postJson('/ad_from', params);
     },
-    Edit(param) {
-      return Ajax.get('/ad_from/' + param.id);
+    Edit(params) {
+      return Ajax.get('/ad_from/' + params.id);
     },
-    Number(param) {
-      return Ajax.get('/ad_from/' + param.id + '/number');
+    Number(params) {
+      return Ajax.get('/ad_from/' + params.id + '/number');
     },
-    Update(param) {
-      return Ajax.putJson('/ad_from/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/ad_from/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/ad_from/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/ad_from/' + params.id, params);
     }
   },
   CourseComment: {
-    List(param) {
-      return Ajax.get('/course_comment', param);
+    List(params) {
+      return Ajax.get('/course_comment', params);
     },
-    Delete(param) {
-      return Ajax.postJson('/course_comment/delete', param);
+    Delete(params) {
+      return Ajax.postJson('/course_comment/delete', params);
     }
   },
   VideoComment: {
-    List(param) {
-      return Ajax.get('/video_comment', param);
+    List(params) {
+      return Ajax.get('/video_comment', params);
     },
-    Delete(param) {
-      return Ajax.postJson('/video_comment/delete', param);
+    Delete(params) {
+      return Ajax.postJson('/video_comment/delete', params);
     }
   },
   Order: {
-    List(param) {
-      return Ajax.get('/order', param);
+    List(params) {
+      return Ajax.get('/order', params);
     },
-    Detail(param) {
-      return Ajax.get('/order/' + param.id, param);
+    Detail(params) {
+      return Ajax.get('/order/' + params.id, params);
     },
-    Finish(param) {
-      return Ajax.get('/order/' + param.id + '/finish', param);
+    Finish(params) {
+      return Ajax.get('/order/' + params.id + '/finish', params);
     }
   },
   Member: {
-    List(param) {
-      return Ajax.get('/member', param);
+    List(params) {
+      return Ajax.get('/member', params);
     },
     Create() {
       return Ajax.get('/member');
     },
-    Store(param) {
-      return Ajax.postJson('/member', param);
+    Store(params) {
+      return Ajax.postJson('/member', params);
     },
-    Edit(param) {
-      return Ajax.get('/member/' + param.id, param);
+    Edit(params) {
+      return Ajax.get('/member/' + params.id, params);
     },
-    Update(param) {
-      return Ajax.putJson('/member/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/member/' + params.id, params);
     },
-    InviteBalanceWithdrawOrders(param) {
-      return Ajax.get('/member/inviteBalance/withdrawOrders', param);
+    InviteBalanceWithdrawOrders(params) {
+      return Ajax.get('/member/inviteBalance/withdrawOrders', params);
     },
-    CreateInviteBalanceWithdrawOrder(param) {
-      return Ajax.postJson('/member/inviteBalance/withdrawOrders', param);
+    CreateInviteBalanceWithdrawOrder(params) {
+      return Ajax.postJson('/member/inviteBalance/withdrawOrders', params);
     },
-    Detail(param) {
-      return Ajax.get('/member/' + param.id + '/detail', param);
+    Detail(params) {
+      return Ajax.get('/member/' + params.id + '/detail', params);
     },
-    Courses(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userCourses', param);
+    Courses(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userCourses', params);
     },
-    Videos(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userVideos', param);
+    Videos(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userVideos', params);
     },
-    Roles(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userRoles', param);
+    Roles(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userRoles', params);
     },
-    Collect(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userCollect', param);
+    Collect(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userCollect', params);
     },
-    History(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userHistory', param);
+    History(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userHistory', params);
     },
-    Orders(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userOrders', param);
+    Orders(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userOrders', params);
     },
-    Invite(param) {
-      return Ajax.get('/member/' + param.id + '/detail/userInvite', param);
+    Invite(params) {
+      return Ajax.get('/member/' + params.id + '/detail/userInvite', params);
     },
-    Credit1Records(param) {
-      return Ajax.get('/member/' + param.id + '/detail/credit1Records', param);
+    Credit1Records(params) {
+      return Ajax.get('/member/' + params.id + '/detail/credit1Records', params);
     },
-    Credit1Change(param) {
-      return Ajax.postJson('/member/credit1/change', param);
+    Credit1Change(params) {
+      return Ajax.postJson('/member/credit1/change', params);
     },
-    Tags(param) {
-      return Ajax.putJson('/member/' + param.id + '/tags', param);
+    Tags(params) {
+      return Ajax.putJson('/member/' + params.id + '/tags', params);
     },
-    Remark(param) {
-      return Ajax.get('/member/' + param.id + '/remark', param);
+    Remark(params) {
+      return Ajax.get('/member/' + params.id + '/remark', params);
     },
-    RemarkUpdate(param) {
-      return Ajax.putJson('/member/' + param.id + '/remark', param);
+    RemarkUpdate(params) {
+      return Ajax.putJson('/member/' + params.id + '/remark', params);
     },
     SendMessage(id, message) {
       return Ajax.postJson('/member/' + id + '/message', { message: message });
     },
-    VideoWatchRecords(param) {
-      return Ajax.get('/member/' + param.id + '/detail/videoWatchRecords', param);
+    VideoWatchRecords(params) {
+      return Ajax.get('/member/' + params.id + '/detail/videoWatchRecords', params);
     },
     Import(params) {
       return Ajax.postJson('/member/import', params);
     }
   },
   Course: {
-    List(param) {
-      return Ajax.get('/course', param);
+    List(params) {
+      return Ajax.get('/course', params);
     },
-    All(param) {
-      return Ajax.get('/course/all', param);
+    All(params) {
+      return Ajax.get('/course/all', params);
     },
-    CreateParams(param) {
-      return Ajax.get('/course/create', param);
+    Createparams(params) {
+      return Ajax.get('/course/create', params);
     },
-    Create(param) {
-      return Ajax.postJson('/course', param);
+    Create(params) {
+      return Ajax.postJson('/course', params);
     },
-    Edit(param) {
-      return Ajax.get('/course/' + param.id);
+    Edit(params) {
+      return Ajax.get('/course/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/course/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/course/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/course/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/course/' + params.id, params);
     },
-    WatchRecords(param) {
-      return Ajax.get('/course/' + param.id + '/watch/records', param);
+    WatchRecords(params) {
+      return Ajax.get('/course/' + params.id + '/watch/records', params);
     },
-    Subscribes(param) {
-      return Ajax.get('/course/' + param.course_id + '/subscribes', param);
+    Subscribes(params) {
+      return Ajax.get('/course/' + params.course_id + '/subscribes', params);
     },
-    SubscribeDelete(param) {
-      return Ajax.get('/course/' + param.course_id + '/subscribe/delete', param);
+    SubscribeDelete(params) {
+      return Ajax.get('/course/' + params.course_id + '/subscribe/delete', params);
     },
-    SubscribeCreate(param) {
-      return Ajax.postJson('/course/' + param.course_id + '/subscribe/create', param);
+    SubscribeCreate(params) {
+      return Ajax.postJson('/course/' + params.course_id + '/subscribe/create', params);
     },
     VideoWatchRecords(courseId, userId) {
       return Ajax.get('/course/' + courseId + '/user/' + userId + '/watch/records');
     }
   },
   CourseAttach: {
-    List(param) {
-      return Ajax.get('/course_attach', param);
+    List(params) {
+      return Ajax.get('/course_attach', params);
     },
-    Store(param) {
-      return Ajax.postJson('/course_attach', param);
+    Store(params) {
+      return Ajax.postJson('/course_attach', params);
     },
-    Delete(param) {
-      return Ajax.delete('/course_attach/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/course_attach/' + params.id, params);
     }
   },
   Video: {
-    List(param) {
-      return Ajax.get('/video', param);
+    List(params) {
+      return Ajax.get('/video', params);
     },
     Create() {
       return Ajax.get('/video/create');
     },
-    Store(param) {
-      return Ajax.postJson('/video', param);
+    Store(params) {
+      return Ajax.postJson('/video', params);
     },
-    Edit(param) {
-      return Ajax.get('/video/' + param.id);
+    Edit(params) {
+      return Ajax.get('/video/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/video/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/video/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/video/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/video/' + params.id, params);
     },
-    MultiDelete(param) {
-      return Ajax.post('/video/delete/multi', param);
+    MultiDelete(params) {
+      return Ajax.post('/video/delete/multi', params);
     },
-    Subscribes(param) {
-      return Ajax.get('/video/' + param.video_id + '/subscribes', param);
+    Subscribes(params) {
+      return Ajax.get('/video/' + params.video_id + '/subscribes', params);
     },
-    SubscribeCreate(param) {
-      return Ajax.postJson('/video/' + param.video_id + '/subscribe/create', param);
+    SubscribeCreate(params) {
+      return Ajax.postJson('/video/' + params.video_id + '/subscribe/create', params);
     },
-    SubscribeDelete(param) {
-      return Ajax.get('/video/' + param.video_id + '/subscribe/delete', param);
+    SubscribeDelete(params) {
+      return Ajax.get('/video/' + params.video_id + '/subscribe/delete', params);
     },
-    WatchRecords(param) {
-      return Ajax.get('/video/' + param.video_id + '/watch/records', param);
+    WatchRecords(params) {
+      return Ajax.get('/video/' + params.video_id + '/watch/records', params);
     },
-    Import(param) {
-      return Ajax.postJson('/video/import', param);
+    Import(params) {
+      return Ajax.postJson('/video/import', params);
     }
   },
   CourseChapter: {
-    List(param) {
-      return Ajax.get('/course_chapter/' + param.course_id, param);
+    List(params) {
+      return Ajax.get('/course_chapter/' + params.course_id, params);
     },
-    Create(param) {
-      return Ajax.postJson('/course_chapter/' + param.course_id, param);
+    Create(params) {
+      return Ajax.postJson('/course_chapter/' + params.course_id, params);
     },
-    Edit(param) {
-      return Ajax.get('/course_chapter/' + param.course_id + '/' + param.id);
+    Edit(params) {
+      return Ajax.get('/course_chapter/' + params.course_id + '/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/course_chapter/' + param.course_id + '/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/course_chapter/' + params.course_id + '/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/course_chapter/' + param.course_id + '/' + param.id);
+    Delete(params) {
+      return Ajax.delete('/course_chapter/' + params.course_id + '/' + params.id);
     }
   },
   Setting: {
     Get() {
       return Ajax.get('/setting');
     },
-    Save(param) {
-      return Ajax.postJson('/setting', param);
+    Save(params) {
+      return Ajax.postJson('/setting', params);
     }
   },
   Administrator: {
-    List(param) {
-      return Ajax.get('/administrator', param);
+    List(params) {
+      return Ajax.get('/administrator', params);
     },
-    Create(param) {
-      return Ajax.get('/administrator/create', param);
+    Create(params) {
+      return Ajax.get('/administrator/create', params);
     },
-    Store(param) {
-      return Ajax.postJson('/administrator', param);
+    Store(params) {
+      return Ajax.postJson('/administrator', params);
     },
-    Edit(param) {
-      return Ajax.get('/administrator/' + param.id);
+    Edit(params) {
+      return Ajax.get('/administrator/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/administrator/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/administrator/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/administrator/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/administrator/' + params.id, params);
     },
-    ChangePassword(param) {
-      return Ajax.putJson('/administrator/password', param);
+    ChangePassword(params) {
+      return Ajax.putJson('/administrator/password', params);
     }
   },
   AdministratorRole: {
-    List(param) {
-      return Ajax.get('/administrator_role', param);
+    List(params) {
+      return Ajax.get('/administrator_role', params);
     },
-    Create(param) {
-      return Ajax.get('/administrator_role/create', param);
+    Create(params) {
+      return Ajax.get('/administrator_role/create', params);
     },
-    Store(param) {
-      return Ajax.postJson('/administrator_role', param);
+    Store(params) {
+      return Ajax.postJson('/administrator_role', params);
     },
-    Edit(param) {
-      return Ajax.get('/administrator_role/' + param.id);
+    Edit(params) {
+      return Ajax.get('/administrator_role/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/administrator_role/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/administrator_role/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/administrator_role/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/administrator_role/' + params.id, params);
     }
   },
   AdministratorPermission: {
-    List(param) {
-      return Ajax.get('/administrator_permission', param);
+    List(params) {
+      return Ajax.get('/administrator_permission', params);
     },
-    Create(param) {
-      return Ajax.postJson('/administrator_permission', param);
+    Create(params) {
+      return Ajax.postJson('/administrator_permission', params);
     },
-    Edit(param) {
-      return Ajax.get('/administrator_permission/' + param.id);
+    Edit(params) {
+      return Ajax.get('/administrator_permission/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/administrator_permission/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/administrator_permission/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/administrator_permission/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/administrator_permission/' + params.id, params);
     }
   },
   Nav: {
-    List(param) {
-      return Ajax.get('/nav', param);
+    List(params) {
+      return Ajax.get('/nav', params);
     },
-    Create(param) {
-      return Ajax.get('/nav/create', param);
+    Create(params) {
+      return Ajax.get('/nav/create', params);
     },
-    Store(param) {
-      return Ajax.postJson('/nav', param);
+    Store(params) {
+      return Ajax.postJson('/nav', params);
     },
-    Edit(param) {
-      return Ajax.get('/nav/' + param.id);
+    Edit(params) {
+      return Ajax.get('/nav/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/nav/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/nav/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.delete('/nav/' + param.id, param);
+    Delete(params) {
+      return Ajax.delete('/nav/' + params.id, params);
     }
   },
   Statistic: {
-    userRegister(param) {
-      return Ajax.get('/statistic/userRegister', param);
+    userRegister(params) {
+      return Ajax.get('/statistic/userRegister', params);
     },
-    orderCreated(param) {
-      return Ajax.get('/statistic/orderCreated', param);
+    orderCreated(params) {
+      return Ajax.get('/statistic/orderCreated', params);
     },
-    orderPaidCount(param) {
-      return Ajax.get('/statistic/orderPaidCount', param);
+    orderPaidCount(params) {
+      return Ajax.get('/statistic/orderPaidCount', params);
     },
-    orderPaidSum(param) {
-      return Ajax.get('/statistic/orderPaidSum', param);
+    orderPaidSum(params) {
+      return Ajax.get('/statistic/orderPaidSum', params);
     },
-    courseSell(param) {
-      return Ajax.get('/statistic/courseSell', param);
+    courseSell(params) {
+      return Ajax.get('/statistic/courseSell', params);
     },
-    roleSell(param) {
-      return Ajax.get('/statistic/roleSell', param);
+    roleSell(params) {
+      return Ajax.get('/statistic/roleSell', params);
     },
-    videoWatchDuration(param) {
-      return Ajax.get('/statistic/videoWatchDuration', param);
+    videoWatchDuration(params) {
+      return Ajax.get('/statistic/videoWatchDuration', params);
     },
-    courseWatchDuration(param) {
-      return Ajax.get('/statistic/courseWatchDuration', param);
+    courseWatchDuration(params) {
+      return Ajax.get('/statistic/courseWatchDuration', params);
     }
   },
   PromoCode: {
-    List(param) {
-      return Ajax.get('/promoCode', param);
+    List(params) {
+      return Ajax.get('/promoCode', params);
     },
-    Create(param) {
-      return Ajax.postJson('/promoCode', param);
+    Create(params) {
+      return Ajax.postJson('/promoCode', params);
     },
-    Edit(param) {
-      return Ajax.get('/promoCode/' + param.id);
+    Edit(params) {
+      return Ajax.get('/promoCode/' + params.id);
     },
-    Update(param) {
-      return Ajax.putJson('/promoCode/' + param.id, param);
+    Update(params) {
+      return Ajax.putJson('/promoCode/' + params.id, params);
     },
-    Delete(param) {
-      return Ajax.postJson('/promoCode/delete/multi', param);
+    Delete(params) {
+      return Ajax.postJson('/promoCode/delete/multi', params);
     },
-    Import(param) {
-      return Ajax.postJson('/promoCode/import', param);
+    Import(params) {
+      return Ajax.postJson('/promoCode/import', params);
     },
-    Generator(param) {
-      return Ajax.postJson('/promoCode/generator', param);
+    Generator(params) {
+      return Ajax.postJson('/promoCode/generator', params);
     }
   },
   VideoUpload: {
-    AliyunAuthTokenRefresh(param) {
-      return Ajax.postJson('/video/token/aliyun/refresh', param);
+    AliyunAuthTokenRefresh(params) {
+      return Ajax.postJson('/video/token/aliyun/refresh', params);
     },
-    AliyunAuthTokenCreate(param) {
-      return Ajax.postJson('/video/token/aliyun/create', param);
+    AliyunAuthTokenCreate(params) {
+      return Ajax.postJson('/video/token/aliyun/create', params);
     },
-    TencentAuthToken(param) {
-      return Ajax.postJson('/video/token/tencent', param);
+    TencentAuthToken(params) {
+      return Ajax.postJson('/video/token/tencent', params);
     }
   },
   Upload: {
-    ImageDownload(param) {
-      return Ajax.postJson('/upload/image/download', param);
+    ImageDownload(params) {
+      return Ajax.postJson('/upload/image/download', params);
     }
   },
   Extentions: {
@@ -568,21 +568,21 @@ const Request = {
         Get() {
           return Ajax.get('/backend/addons/AliyunHls/setting');
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/AliyunHls/setting', param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/AliyunHls/setting', params);
         }
       },
       Videos: {
-        All(param) {
-          return Ajax.get('/backend/addons/AliyunHls/videos', param);
+        All(params) {
+          return Ajax.get('/backend/addons/AliyunHls/videos', params);
         },
-        SubmitTransTask(param) {
-          return Ajax.postJson('/backend/addons/AliyunHls/videos/submitTransTask', param);
+        SubmitTransTask(params) {
+          return Ajax.postJson('/backend/addons/AliyunHls/videos/submitTransTask', params);
         }
       }
     },
     aliyunVideosImport: {
-      Params() {
+      params() {
         return Ajax.get('/backend/addons/aliyun_videos_import/params');
       },
       Import(params) {
@@ -591,472 +591,472 @@ const Request = {
     },
     learningPaths: {
       Paths: {
-        List(param) {
-          return Ajax.get('/backend/addons/LearningPaths/path/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/LearningPaths/path/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/LearningPaths/path/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/LearningPaths/path/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/LearningPaths/path/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/LearningPaths/path/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/LearningPaths/path/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/LearningPaths/path/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/LearningPaths/path/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/LearningPaths/path/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/LearningPaths/path/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/LearningPaths/path/' + params.id, params);
         }
       },
       Steps: {
-        List(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/LearningPaths/step/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/LearningPaths/step/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/LearningPaths/step/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/LearningPaths/step/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/LearningPaths/step/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/LearningPaths/step/' + params.id, params);
         }
       },
       Relation: {
-        List(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/relation/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/relation/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/relation/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/relation/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/LearningPaths/step/relation/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/LearningPaths/step/relation/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/LearningPaths/step/relation/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/LearningPaths/step/relation/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/LearningPaths/step/relation/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/LearningPaths/step/relation/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/LearningPaths/step/relation/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/LearningPaths/step/relation/' + params.id, params);
         }
       }
     },
     meeduBooks: {
       BookComment: {
-        Index(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_comment/index', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_comment/index', params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/book_comment/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/book_comment/' + params.id, params);
         },
-        Checked(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/book_comment/checked', param);
+        Checked(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/book_comment/checked', params);
         }
       },
       ArticleComment: {
-        Index(param) {
-          return Ajax.get('/backend/addons/meedu_books/article_comment/index', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/meedu_books/article_comment/index', params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/article_comment/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/article_comment/' + params.id, params);
         },
-        Checked(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/article_comment/checked', param);
+        Checked(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/article_comment/checked', params);
         }
       },
       Category: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/book_category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/book_category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_books/book_category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_books/book_category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/book_category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/book_category/' + params.id, params);
         }
       },
       Chapter: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_chapter/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_chapter/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_chapter/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_chapter/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/book_chapter/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/book_chapter/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_chapter/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_chapter/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_books/book_chapter/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_books/book_chapter/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/book_chapter/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/book_chapter/' + params.id, params);
         }
       },
       Article: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_article/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_article/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_article/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_article/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/book_article/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/book_article/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_books/book_article/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_books/book_article/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_books/book_article/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_books/book_article/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/book_article/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/book_article/' + params.id, params);
         }
       },
       Book: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_books/book/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_books/book/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_books/book/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_books/book/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_books/book/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_books/book/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_books/book/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_books/book/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_books/book/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_books/book/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_books/book/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_books/book/' + params.id, params);
         }
       }
     },
     meeduTopics: {
       Category: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_topics/category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_topics/category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_topics/category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_topics/category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_topics/category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_topics/category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_topics/category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_topics/category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_topics/category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_topics/category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_topics/category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_topics/category/' + params.id, params);
         }
       },
       Topic: {
-        List(param) {
-          return Ajax.get('/backend/addons/meedu_topics/topic/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/meedu_topics/topic/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/meedu_topics/topic/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/meedu_topics/topic/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/meedu_topics/topic/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/meedu_topics/topic/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/meedu_topics/topic/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/meedu_topics/topic/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/meedu_topics/topic/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/meedu_topics/topic/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_topics/topic/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_topics/topic/' + params.id, params);
         }
       },
       Comment: {
-        Index(param) {
-          return Ajax.get('/backend/addons/meedu_topics/comment', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/meedu_topics/comment', params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/meedu_topics/comment/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/meedu_topics/comment/' + params.id, params);
         },
-        Check(param) {
-          return Ajax.postJson('/backend/addons/meedu_topics/comment/check', param);
+        Check(params) {
+          return Ajax.postJson('/backend/addons/meedu_topics/comment/check', params);
         }
       },
       Order: {
-        Index(param) {
-          return Ajax.get('/backend/addons/meedu_topics/orders', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/meedu_topics/orders', params);
         }
       }
     },
     miaoSha: {
       Goods: {
-        List(param) {
-          return Ajax.get('/backend/addons/MiaoSha/goods/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/MiaoSha/goods/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/MiaoSha/goods/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/MiaoSha/goods/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/MiaoSha/goods/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/MiaoSha/goods/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/MiaoSha/goods/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/MiaoSha/goods/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/MiaoSha/goods/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/MiaoSha/goods/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/MiaoSha/goods/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/MiaoSha/goods/' + params.id, params);
         }
       },
       Orders: {
-        Index(param) {
-          return Ajax.get('/backend/addons/MiaoSha/orders/index', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/MiaoSha/orders/index', params);
         }
       }
     },
     paper: {
       Paper: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/paper/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/paper/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/paper/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/paper/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/paper/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/paper/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/paper/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/paper/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/paper/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/paper/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Paper/paper/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Paper/paper/' + params.id, params);
         },
-        Users(param) {
-          return Ajax.get('/backend/addons/Paper/paper/' + param.id + '/user', param);
+        Users(params) {
+          return Ajax.get('/backend/addons/Paper/paper/' + params.id + '/user', params);
         },
-        Statistics(param) {
-          return Ajax.get('/backend/addons/Paper/paper/' + param.id + '/statistics', param);
+        Statistics(params) {
+          return Ajax.get('/backend/addons/Paper/paper/' + params.id + '/statistics', params);
         },
-        UserAdd(param) {
-          return Ajax.postJson('/backend/addons/Paper/paper/' + param.id + '/user', param);
+        UserAdd(params) {
+          return Ajax.postJson('/backend/addons/Paper/paper/' + params.id + '/user', params);
         },
-        UserDel(param) {
-          return Ajax.delete('/backend/addons/Paper/paper/' + param.id + '/user/' + param.user_id);
+        UserDel(params) {
+          return Ajax.delete('/backend/addons/Paper/paper/' + params.id + '/user/' + params.user_id);
         },
-        Questions(param) {
-          return Ajax.get('/backend/addons/Paper/paper/' + param.id + '/questions', param);
+        Questions(params) {
+          return Ajax.get('/backend/addons/Paper/paper/' + params.id + '/questions', params);
         },
-        AddQuestions(param) {
-          return Ajax.postJson('/backend/addons/Paper/paper/' + param.id + '/questions', param);
+        AddQuestions(params) {
+          return Ajax.postJson('/backend/addons/Paper/paper/' + params.id + '/questions', params);
         },
-        DelQuestion(param) {
-          return Ajax.delete('/backend/addons/Paper/paper/' + param.id + '/questions/' + param.question_id);
+        DelQuestion(params) {
+          return Ajax.delete('/backend/addons/Paper/paper/' + params.id + '/questions/' + params.question_id);
         },
-        UserPapers(param) {
-          return Ajax.get(`/backend/addons/Paper/paper/${param.id}/userPaper`, param);
+        UserPapers(params) {
+          return Ajax.get(`/backend/addons/Paper/paper/${params.id}/userPaper`, params);
         },
-        UserPaperInfo(param) {
-          return Ajax.get(`/backend/addons/Paper/paper/${param.id}/userPaper/${param.user_paper_id}`, param);
+        UserPaperInfo(params) {
+          return Ajax.get(`/backend/addons/Paper/paper/${params.id}/userPaper/${params.user_paper_id}`, params);
         },
-        SubmitScore(param) {
-          return Ajax.postJson(`/backend/addons/Paper/paper/${param.id}/userPaper/${param.user_paper_id}`, param);
+        SubmitScore(params) {
+          return Ajax.postJson(`/backend/addons/Paper/paper/${params.id}/userPaper/${params.user_paper_id}`, params);
         }
       },
       Question: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/question/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/question/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/question/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/question/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/question/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/question/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/question/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/question/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/question/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/question/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/Paper/question/destroy/multi', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/Paper/question/destroy/multi', params);
         },
-        Import(param) {
-          return Ajax.postJson('/backend/addons/Paper/question/import/csv', param);
+        Import(params) {
+          return Ajax.postJson('/backend/addons/Paper/question/import/csv', params);
         }
       },
       QuestionCategory: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/question_category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/question_category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/question_category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/question_category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/question_category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/question_category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/question_category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/question_category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/question_category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/question_category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Paper/question_category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Paper/question_category/' + params.id, params);
         }
       },
       PaperCategory: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/paper_category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/paper_category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/paper_category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/paper_category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/paper_category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/paper_category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/paper_category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/paper_category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/paper_category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/paper_category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Paper/paper_category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Paper/paper_category/' + params.id, params);
         }
       },
       Practice: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/practice/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/practice/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/practice/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/practice/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/practice/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/practice/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/practice/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/practice/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice/delete/multi', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice/delete/multi', params);
         },
-        Users(param) {
-          return Ajax.get('/backend/addons/Paper/practice/' + param.id + '/users', param);
+        Users(params) {
+          return Ajax.get('/backend/addons/Paper/practice/' + params.id + '/users', params);
         },
-        AddUser(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice/' + param.id + '/user/insert', param);
+        AddUser(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice/' + params.id + '/user/insert', params);
         },
-        DelUser(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice/' + param.id + '/user/delete', param);
+        DelUser(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice/' + params.id + '/user/delete', params);
         },
         UserProgress(pid, userId) {
           return Ajax.get('/backend/addons/Paper/practice/' + pid + '/user/' + userId + '/progress');
         }
       },
       PracticeChapter: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice_chapter/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice_chapter/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/practice_chapter/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/practice_chapter/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice_chapter/delete/multi', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice_chapter/delete/multi', params);
         },
-        Questions(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id + '/questions', param);
+        Questions(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/' + params.id + '/questions', params);
         },
-        QuestionsCreate(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id + '/questions/params', param);
+        QuestionsCreate(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/' + params.id + '/questions/params', params);
         },
-        QuestionsStore(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice_chapter/' + param.id + '/questions', param);
+        QuestionsStore(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice_chapter/' + params.id + '/questions', params);
         },
-        QuestionsDelete(param) {
-          return Ajax.postJson('/backend/addons/Paper/practice_chapter/' + param.id + '/questions/delete', param);
+        QuestionsDelete(params) {
+          return Ajax.postJson('/backend/addons/Paper/practice_chapter/' + params.id + '/questions/delete', params);
         },
-        Users(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id + '/users', param);
+        Users(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/' + params.id + '/users', params);
         },
-        UserDetail(param) {
-          return Ajax.get('/backend/addons/Paper/practice_chapter/' + param.id + '/user/detail', param);
+        UserDetail(params) {
+          return Ajax.get('/backend/addons/Paper/practice_chapter/' + params.id + '/user/detail', params);
         }
       },
       MockPaper: {
-        List(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Paper/mock_paper/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Paper/mock_paper/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Paper/mock_paper/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Paper/mock_paper/' + param.id);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Paper/mock_paper/' + params.id);
         },
-        Users(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/users', param);
+        Users(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + params.id + '/users', params);
         },
-        Statistics(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/statistics', param);
+        Statistics(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + params.id + '/statistics', params);
         },
-        Records(param) {
-          return Ajax.get('/backend/addons/Paper/mock_paper/' + param.id + '/records', param);
+        Records(params) {
+          return Ajax.get('/backend/addons/Paper/mock_paper/' + params.id + '/records', params);
         },
-        AddUser(param) {
-          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + param.id + '/user/insert', param);
+        AddUser(params) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + params.id + '/user/insert', params);
         },
-        DelUser(param) {
-          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + param.id + '/user/delete', param);
+        DelUser(params) {
+          return Ajax.postJson('/backend/addons/Paper/mock_paper/' + params.id + '/user/delete', params);
         },
       }
     },
@@ -1067,62 +1067,62 @@ const Request = {
     },
     singlePage: {
       Page: {
-        List(param) {
-          return Ajax.get('/backend/addons/single_page/page/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/single_page/page/index', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/single_page/page/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/single_page/page/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/single_page/page/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/single_page/page/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/single_page/page/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/single_page/page/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/single_page/page/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/single_page/page/' + params.id, params);
         }
       }
     },
     templateOne: {
       Nav: {
-        List(param) {
-          return Ajax.get('/backend/addons/TemplateOne/nav/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/TemplateOne/nav/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/TemplateOne/nav/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/TemplateOne/nav/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/TemplateOne/nav/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/TemplateOne/nav/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/TemplateOne/nav/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/TemplateOne/nav/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/TemplateOne/nav/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/TemplateOne/nav/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/TemplateOne/nav/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/TemplateOne/nav/' + params.id, params);
         }
       },
       Slider: {
-        List(param) {
-          return Ajax.get('/backend/addons/TemplateOne/slider/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/TemplateOne/slider/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/TemplateOne/slider/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/TemplateOne/slider/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/TemplateOne/slider/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/TemplateOne/slider/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/TemplateOne/slider/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/TemplateOne/slider/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/TemplateOne/slider/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/TemplateOne/slider/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/TemplateOne/slider/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/TemplateOne/slider/' + params.id, params);
         }
       }
     },
@@ -1131,90 +1131,90 @@ const Request = {
         Get() {
           return Ajax.get('/backend/addons/TencentCloudHls/setting');
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/TencentCloudHls/setting', param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/TencentCloudHls/setting', params);
         },
-        createTemplate(param) {
-          return Ajax.get('/backend/addons/TencentCloudHls/createTemplate', param);
+        createTemplate(params) {
+          return Ajax.get('/backend/addons/TencentCloudHls/createTemplate', params);
         }
       },
       Videos: {
-        All(param) {
-          return Ajax.get('/backend/addons/TencentCloudHls/videos', param);
+        All(params) {
+          return Ajax.get('/backend/addons/TencentCloudHls/videos', params);
         },
-        SubmitTransTask(param) {
-          return Ajax.get('/backend/addons/TencentCloudHls/videos/submitTransTask', param);
+        SubmitTransTask(params) {
+          return Ajax.get('/backend/addons/TencentCloudHls/videos/submitTransTask', params);
         }
       }
     },
     tuanGou: {
       Goods: {
-        List(param) {
-          return Ajax.get('/backend/addons/TuanGou/goods/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/TuanGou/goods/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/TuanGou/goods/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/TuanGou/goods/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/TuanGou/goods/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/TuanGou/goods/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/TuanGou/goods/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/TuanGou/goods/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/TuanGou/goods/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/TuanGou/goods/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/TuanGou/goods/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/TuanGou/goods/' + params.id, params);
         },
-        Items(param) {
-          return Ajax.get('/backend/addons/TuanGou/goods/' + param.id + '/items', param);
+        Items(params) {
+          return Ajax.get('/backend/addons/TuanGou/goods/' + params.id + '/items', params);
         },
-        CompleteItem(param) {
-          return Ajax.get('/backend/addons/TuanGou/goods/item/complete', param);
+        CompleteItem(params) {
+          return Ajax.get('/backend/addons/TuanGou/goods/item/complete', params);
         }
       },
       Orders: {
-        Index(param) {
-          return Ajax.get('/backend/addons/TuanGou/orders/index', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/TuanGou/orders/index', params);
         }
       },
       Refunds: {
-        Index(param) {
-          return Ajax.get('/backend/addons/TuanGou/refunds/index', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/TuanGou/refunds/index', params);
         },
-        Handler(param) {
-          return Ajax.get('/backend/addons/TuanGou/refunds/' + param.id + '/handler', param);
+        Handler(params) {
+          return Ajax.get('/backend/addons/TuanGou/refunds/' + params.id + '/handler', params);
         }
       }
     },
     wenda: {
       Category: {
-        List(param) {
-          return Ajax.get('/backend/addons/Wenda/category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Wenda/category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Wenda/category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Wenda/category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Wenda/category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Wenda/category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/Wenda/category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Wenda/category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Wenda/category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Wenda/category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Wenda/category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Wenda/category/' + params.id, params);
         }
       },
       Question: {
-        List(param) {
-          return Ajax.get('/backend/addons/Wenda/question/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/Wenda/question/index', params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/Wenda/question/delete', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/Wenda/question/delete', params);
         },
         Answers(id) {
           return Ajax.get('/backend/addons/Wenda/question/' + id + '/answers');
@@ -1235,350 +1235,338 @@ const Request = {
     },
     zhibo: {
       CourseCategory: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/course_category/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/course_category/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/course_category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/course_category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course_category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course_category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/zhibo/course_category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/zhibo/course_category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/zhibo/course_category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/zhibo/course_category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/zhibo/course_category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/zhibo/course_category/' + params.id, params);
         }
       },
       Course: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/course/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/course/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/course/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/course/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/zhibo/course/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/zhibo/course/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/zhibo/course/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/zhibo/course/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/zhibo/course/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/zhibo/course/' + params.id, params);
         },
-        Users(param) {
-          return Ajax.get('/backend/addons/zhibo/course/' + param.id + '/users', param);
+        Users(params) {
+          return Ajax.get('/backend/addons/zhibo/course/' + params.id + '/users', params);
         }
       },
       CourseChapter: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/course_chapter/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/course_chapter/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/course_chapter/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/course_chapter/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course_chapter/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course_chapter/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/zhibo/course_chapter/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/zhibo/course_chapter/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/zhibo/course_chapter/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/zhibo/course_chapter/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/zhibo/course_chapter/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/zhibo/course_chapter/' + params.id, params);
         }
       },
       Teacher: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/teacher/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/teacher/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/teacher/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/teacher/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/zhibo/teacher/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/zhibo/teacher/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/zhibo/teacher/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/zhibo/teacher/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/zhibo/teacher/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/zhibo/teacher/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/zhibo/teacher/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/zhibo/teacher/' + params.id, params);
         }
       },
       CourseVideo: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/course_video/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/course_video/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/course_video/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/course_video/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course_video/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course_video/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/zhibo/course_video/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/zhibo/course_video/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/zhibo/course_video/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/zhibo/course_video/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/zhibo/course_video/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/zhibo/course_video/' + params.id, params);
         },
-        WatchUsers(param) {
-          return Ajax.get('/backend/addons/zhibo/course_video/watch/users', param);
+        WatchUsers(params) {
+          return Ajax.get('/backend/addons/zhibo/course_video/watch/users', params);
         }
       },
       CourseComment: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/course_comment', param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/course_comment', params);
         },
-        Check(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course_comment/check', param);
+        Check(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course_comment/check', params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/zhibo/course_comment/delete', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/zhibo/course_comment/delete', params);
         },
         Reply(id, replyContent) {
           return Ajax.postJson('/backend/addons/zhibo/course_comment/' + id + '/reply', { reply: replyContent });
         },
       },
       CourseChat: {
-        List(param) {
-          return Ajax.get('/backend/addons/zhibo/chat/' + param.course_id + '/' + param.video_id, param);
+        List(params) {
+          return Ajax.get('/backend/addons/zhibo/chat/' + params.course_id + '/' + params.video_id, params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/zhibo/chat/delete', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/zhibo/chat/delete', params);
         }
       },
       Zhibo: {
-        Create(param) {
-          return Ajax.get('/backend/addons/zhibo/zhibo/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/zhibo/zhibo/create', params);
         },
-        getParams(param) {
-          return Ajax.get('/backend/addons/zhibo/zhibo/getParams', param);
+        getparams(params) {
+          return Ajax.get('/backend/addons/zhibo/zhibo/getparams', params);
         },
-        stop(param) {
-          return Ajax.get('/backend/addons/zhibo/zhibo/stop', param);
+        stop(params) {
+          return Ajax.get('/backend/addons/zhibo/zhibo/stop', params);
         }
       }
     },
     multiLevelShare: {
       Poster: {
-        List(param) {
-          return Ajax.get('/backend/addons/multi_level_share/poster/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/multi_level_share/poster/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/multi_level_share/poster/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/multi_level_share/poster/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/multi_level_share/poster/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/multi_level_share/poster/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/multi_level_share/poster/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/multi_level_share/poster/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/multi_level_share/poster/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/multi_level_share/poster/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/multi_level_share/poster/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/multi_level_share/poster/' + params.id, params);
         }
       },
       Goods: {
-        List(param) {
-          return Ajax.get('/backend/addons/multi_level_share/goods/index', param);
+        List(params) {
+          return Ajax.get('/backend/addons/multi_level_share/goods/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/multi_level_share/goods/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/multi_level_share/goods/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/multi_level_share/goods/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/multi_level_share/goods/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/multi_level_share/goods/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/multi_level_share/goods/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/multi_level_share/goods/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/multi_level_share/goods/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/multi_level_share/goods/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/multi_level_share/goods/' + params.id, params);
         }
       }
     },
     xiaoBanKe: {
       Order: {
-        Index(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/order', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/order', params);
         },
-        SetTeacherParams(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/order/teacherParams', param);
+        SetTeacherparams(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/order/teacherparams', params);
         },
-        SetTeacher(param) {
-          return Ajax.putJson('/backend/addons/XiaoBanKe/order/' + param.id + '/teacher', param);
+        SetTeacher(params) {
+          return Ajax.putJson('/backend/addons/XiaoBanKe/order/' + params.id + '/teacher', params);
         }
       },
       Dashboard: {
-        Index(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/dashboard', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/dashboard', params);
         }
       },
       CourseCategory: {
-        List(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course_category', param);
+        List(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course_category', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course_category/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course_category/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/XiaoBanKe/course_category/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/XiaoBanKe/course_category/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course_category/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course_category/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/XiaoBanKe/course_category/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/XiaoBanKe/course_category/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/XiaoBanKe/course_category/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/XiaoBanKe/course_category/' + params.id, params);
         }
       },
       Course: {
-        List(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course', param);
+        List(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/XiaoBanKe/course/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/XiaoBanKe/course/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/course/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/course/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/XiaoBanKe/course/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/XiaoBanKe/course/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/XiaoBanKe/course/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/XiaoBanKe/course/' + params.id, params);
         }
       },
       Teacher: {
-        List(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/teacher', param);
+        List(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/teacher', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/teacher/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/teacher/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/XiaoBanKe/teacher/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/XiaoBanKe/teacher/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/XiaoBanKe/teacher/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/XiaoBanKe/teacher/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/XiaoBanKe/teacher/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/XiaoBanKe/teacher/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/XiaoBanKe/teacher/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/XiaoBanKe/teacher/' + params.id, params);
         }
       }
     },
     Snapshot: {
       Images: {
-        Index(param) {
-          return Ajax.get('/backend/addons/Snapshot/images', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/Snapshot/images', params);
         },
-        Delete(param) {
-          return Ajax.postJson('/backend/addons/Snapshot/images/delete/multi', param);
+        Delete(params) {
+          return Ajax.postJson('/backend/addons/Snapshot/images/delete/multi', params);
         }
       }
     },
     CodeExchanger: {
       Goods: {
-        Index(param) {
-          return Ajax.get('/backend/addons/CodeExchanger/goods', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/CodeExchanger/goods', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/CodeExchanger/goods/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/CodeExchanger/goods/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/CodeExchanger/goods/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/CodeExchanger/goods/create', params);
         },
-        Edit(param) {
-          return Ajax.get('/backend/addons/CodeExchanger/goods/' + param.id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/CodeExchanger/goods/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/CodeExchanger/goods/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/CodeExchanger/goods/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/CodeExchanger/goods/' + param.id, param);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/CodeExchanger/goods/' + params.id, params);
         }
       },
       Codes: {
-        Index(param) {
-          return Ajax.get('/backend/addons/CodeExchanger/codes', param);
+        Index(params) {
+          return Ajax.get('/backend/addons/CodeExchanger/codes', params);
         },
-        Generate(param) {
-          return Ajax.postJson('/backend/addons/CodeExchanger/code/generate', param);
+        Generate(params) {
+          return Ajax.postJson('/backend/addons/CodeExchanger/code/generate', params);
         },
-        DeleteMulti(param) {
-          return Ajax.postJson('/backend/addons/CodeExchanger/code/delete/multi', param);
+        DeleteMulti(params) {
+          return Ajax.postJson('/backend/addons/CodeExchanger/code/delete/multi', params);
         },
         Export() {
           return Ajax.get('/backend/addons/CodeExchanger/code/export');
         }
       }
     },
-    Platform: {
-      Company: {
-        List(param) {
-          return Ajax.get('/backend/addons/Platform/company/index', param);
+    Credit1Mall: {
+      Goods: {
+        Index(params) {
+          return Ajax.get('/backend/addons/Credit1Mall/goods/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Platform/company/create', param);
+        Create(params) {
+          return Ajax.get('/backend/addons/Credit1Mall/goods/create', params);
         },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Platform/company/create', param);
+        Store(params) {
+          return Ajax.postJson('/backend/addons/Credit1Mall/goods/create', params);
         },
-        Edit(id) {
-          return Ajax.get('/backend/addons/Platform/company/' + id);
+        Edit(params) {
+          return Ajax.get('/backend/addons/Credit1Mall/goods/' + params.id);
         },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Platform/company/' + param.id, param);
+        Update(params) {
+          return Ajax.putJson('/backend/addons/Credit1Mall/goods/' + params.id, params);
         },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Platform/company/' + param.id);
+        Delete(params) {
+          return Ajax.delete('/backend/addons/Credit1Mall/goods/' + params.id, params);
         }
       },
-      Anno: {
-        List(param) {
-          return Ajax.get('/backend/addons/Platform/anno/index', param);
+      Order: {
+        Index(params) {
+          return Ajax.get('/backend/addons/Credit1Mall/orders/index', params);
         },
-        Create(param) {
-          return Ajax.get('/backend/addons/Platform/anno/create', param);
-        },
-        Store(param) {
-          return Ajax.postJson('/backend/addons/Platform/anno/create', param);
-        },
-        Edit(id) {
-          return Ajax.get('/backend/addons/Platform/anno/' + id);
-        },
-        Update(param) {
-          return Ajax.putJson('/backend/addons/Platform/anno/' + param.id, param);
-        },
-        Delete(param) {
-          return Ajax.delete('/backend/addons/Platform/anno/' + param.id);
+        Send(id, params) {
+          return Ajax.postJson('/backend/addons/Credit1Mall/orders/' + id + '/send', params);
         }
       }
     }

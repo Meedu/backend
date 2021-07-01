@@ -273,15 +273,15 @@ const initRouter = () => {
         component: (resolve) => require(['components/extentions/codeExchanger/goods/index'], resolve),
         meta: { title: '兑换商品' }
       }, {
-        path: '/PlatformCompany',
-        name: 'PlatformCompany',
-        component: (resolve) => require(['components/extentions/platform/company/index'], resolve),
-        meta: { title: '机构' }
+        path: '/credit1Mall/goods',
+        name: 'Credit1MallGoods',
+        component: (resolve) => require(['components/extentions/credit1Mall/goods/index'], resolve),
+        meta: { title: '积分兑换商品' }
       }, {
-        path: '/PlatformAnno',
-        name: 'PlatformAnno',
-        component: (resolve) => require(['components/extentions/platform/anno/index'], resolve),
-        meta: { title: '机构' }
+        path: '/credit1Mall/orders',
+        name: 'Credit1MallOrders',
+        component: (resolve) => require(['components/extentions/credit1Mall/orders/index'], resolve),
+        meta: { title: '积分兑换订单' }
       }, {
         path: '/system-error',
         name: 'SystemError',
