@@ -1565,6 +1565,12 @@ const Request = {
         Index(params) {
           return Ajax.get('/backend/addons/Credit1Mall/orders/index', params);
         },
+        Edit(id) {
+          return Ajax.get('/backend/addons/Credit1Mall/orders/' + id);
+        },
+        Update(id, params) {
+          return Ajax.putJson('/backend/addons/Credit1Mall/orders/' + id, params);
+        },
         Send(id, params) {
           return Ajax.postJson('/backend/addons/Credit1Mall/orders/' + id + '/send', params);
         }
