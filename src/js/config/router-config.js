@@ -283,6 +283,11 @@ const initRouter = () => {
         component: (resolve) => require(['components/extentions/credit1Mall/orders/index'], resolve),
         meta: { title: '积分兑换订单' }
       }, {
+        path: '/workWeixin/contacts',
+        name: 'WorkWeixinContacts',
+        component: (resolve) => require(['components/extentions/workWeixin/index'], resolve),
+        meta: { title: '通讯录' }
+      }, {
         path: '/system-error',
         name: 'SystemError',
         component: (resolve) => require(['components/error-pages/500'], resolve),

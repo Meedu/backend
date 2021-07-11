@@ -1575,6 +1575,17 @@ const Request = {
           return Ajax.postJson('/backend/addons/Credit1Mall/orders/' + id + '/send', params);
         }
       }
+    },
+    WorkWeixin: {
+      Department() {
+        return Ajax.get('/backend/addons/WorkWeixin/department');
+      },
+      DepartmentUser(params) {
+        return Ajax.get('/backend/addons/WorkWeixin/department/users', params);
+      },
+      DepartmentUpdate() {
+        return Ajax.get('/backend/addons/WorkWeixin/department/update');
+      }
     }
   }
 };
