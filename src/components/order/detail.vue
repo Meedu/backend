@@ -18,7 +18,7 @@
       <div class="float-box mb-10">
         <h3>基本信息</h3>
       </div>
-      <div class="float-box mb-10">
+      <div class="float-box mb-10" v-if="user">
         <Row :space="10" class="order-info mb-10">
           <Cell :width="6">UID：{{ user.id }}</Cell>
           <Cell :width="6">用户：{{ user.nick_name }}</Cell>
@@ -34,7 +34,7 @@
       <div class="float-box mb-10 mt-10">
         <h3>订单商品</h3>
       </div>
-      <div class="float-box mb-10">
+      <div class="float-box mb-10" v-if="order">
         <Table :datas="order.goods" :stripe="true" class="mb-10">
           <TableItem prop="id" title="ID" :width="100"></TableItem>
           <TableItem prop="goods_id" title="商品ID" :width="100"></TableItem>
@@ -54,7 +54,7 @@
       <div class="float-box mb-10 mt-10">
         <h3>支付记录</h3>
       </div>
-      <div class="float-box mb-10">
+      <div class="float-box mb-10" v-if="order">
         <Table :datas="order.paid_records" :stripe="true" class="mb-10">
           <TableItem prop="id" title="ID" :width="100"></TableItem>
           <TableItem prop="paid_type_text" title="支付渠道" :width="150"></TableItem>

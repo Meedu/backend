@@ -143,7 +143,7 @@ export default {
       });
     },
     remove(data, item) {
-      R.Course.Delete({ id: item.id }).then(resp => {
+      R.Course.Delete({ id: item.id }).then(() => {
         HeyUI.$Message.success('成功');
         this.getData();
       });
