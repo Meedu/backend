@@ -138,7 +138,7 @@ export default {
   },
   methods: {
     getCourseCategories() {
-      R.Course.CreateParams().then(resp => {
+      R.Course.Create().then(resp => {
         this.courseCategories = resp.data.categories;
       });
     },

@@ -133,7 +133,7 @@ export default {
   },
   methods: {
     getCourseCategories() {
-      R.Course.CreateParams().then(resp => {
+      R.Course.Create().then(resp => {
         this.courseCategories = resp.data.categories;
       });
     },
@@ -144,7 +144,7 @@ export default {
       let validResult = this.$refs.form.valid();
       if (validResult.result) {
         this.course.render_desc = this.course.original_desc;
-        R.Course.Create(this.course).then(resp => {
+        R.Course.Store(this.course).then(resp => {
           HeyUI.$Message.success('添加成功');
           this.$emit('success');
         });

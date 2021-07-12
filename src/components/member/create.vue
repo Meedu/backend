@@ -48,7 +48,7 @@
         <Row :space="10">
           <Cell :width="6">
             <FormItem label="VIP" prop="role_id">
-              <Select v-model="user.role_id" :datas="roles" keyName="id" titleName="name" :filterable="true" @change="selectCourse"></Select>
+              <Select v-model="user.role_id" :datas="roles" keyName="id" titleName="name"></Select>
             </FormItem>
           </Cell>
           <Cell :width="6">

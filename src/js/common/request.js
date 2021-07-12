@@ -312,10 +312,10 @@ const Request = {
     All(params) {
       return Ajax.get('/course/all', params);
     },
-    Createparams(params) {
+    Create(params) {
       return Ajax.get('/course/create', params);
     },
-    Create(params) {
+    Store(params) {
       return Ajax.postJson('/course', params);
     },
     Edit(params) {
