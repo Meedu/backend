@@ -2784,10 +2784,10 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-xlsx@^0.16.9:
-  version "0.16.9"
-  resolved "https://registry.npm.taobao.org/xlsx/download/xlsx-0.16.9.tgz?cache=0&sync_timestamp=1605857177269&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxlsx%2Fdownload%2Fxlsx-0.16.9.tgz#dacd5bb46bda6dd3743940c9c3dc1e2171826256"
-  integrity sha1-2s1btGvabdN0OUDJw9weIXGCYlY=
+xlsx@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.17.0.tgz#028176a0140967dcee1817d221678461e47481c8"
+  integrity sha512-bZ36FSACiAyjoldey1+7it50PMlDp1pcAJrZKcVZHzKd8BC/z6TQ/QAN8onuqcepifqSznR6uKnjPhaGt6ig9A==
   dependencies:
     adler-32 "~1.2.0"
     cfb "^1.1.4"
