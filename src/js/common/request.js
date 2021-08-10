@@ -1366,8 +1366,8 @@ const Request = {
         Create(params) {
           return Ajax.get('/backend/addons/zhibo/zhibo/create', params);
         },
-        getparams(params) {
-          return Ajax.get('/backend/addons/zhibo/zhibo/getparams', params);
+        getParams(params) {
+          return Ajax.get('/backend/addons/zhibo/zhibo/getParams', params);
         },
         stop(params) {
           return Ajax.get('/backend/addons/zhibo/zhibo/stop', params);
