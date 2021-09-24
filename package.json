@@ -29,7 +29,7 @@
     "vuedraggable": "^2.23.2",
     "vuex": "^2.3.1",
     "wangeditor": "4.6.15",
-    "xlsx": "^0.16.9"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@vue/eslint-config-standard": "^4.0.0",
